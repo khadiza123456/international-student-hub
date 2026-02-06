@@ -10,7 +10,7 @@ body {
   background-color: var(--background);
   color: var(--text-primary);
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 img {
   max-width: 100%;
@@ -295,6 +295,49 @@ body.calm-theme {
 }
 
 /* Header */
+
+/* Hero Section */
+
+.hero {
+  width: 100%;
+  padding: 20rem 0;
+  width: 100%;
+  /* background-color: var(--accent); */
+  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
+}
+.hero .hero-wrapper {
+  padding-left: 2rem;
+}
+.hero .site-slogan h1 {
+  font-size: 10rem;
+  height: 10rem;
+  line-height: 8rem;
+}
+.hero .site-slogan::after {
+  font-size: 10rem;
+  height: 10rem;
+  line-height: 8rem;
+  margin-top: -9rem;
+}
+.hero p.hero-p {
+  color: var(--text-secondary);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.hero .hero-btn {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  background-color: var(--primary);
+  color: var(--background);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+/* Hero Section */
 
 @media (min-width: 576px) {
   .container {
