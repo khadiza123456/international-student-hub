@@ -339,6 +339,274 @@ body.calm-theme {
 
 /* Hero Section */
 
+/* Problem & Categories*/
+
+.categories,
+.problem {
+  width: 100%;
+  margin: 6rem 3rem;
+}
+.country-wrap,
+.cat-wrapper,
+.hiw-wrap,
+.problem-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading {
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  position: relative;
+  padding-left: 5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #ef4444;
+  border-radius: 50%;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f59e0b;
+  border-radius: 50%;
+}
+.category-grid,
+.problem-grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 0;
+}
+.category-grid .card,
+.problem-grid .card {
+  flex: 1 1 200px;
+  white-space: nowrap;
+  text-align: center;
+  padding: 5rem;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  background-color: var(--background);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  border-radius: 1rem;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  margin-top: 2rem;
+}
+.category-grid .card:hover,
+.problem-grid .card:hover {
+  -webkit-transform: translateY(-1rem);
+  -moz-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  -o-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+/* Problem & Categories */
+
+/* Country */
+
+/* COUNTRIES SECTION */
+.countries {
+  width: 100%;
+}
+
+/* Flex layout */
+.country-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.8rem;
+  margin-top: 5rem;
+}
+
+/* Card */
+.country-card {
+  flex: 1 1 22rem;
+  max-width: 26rem;
+  padding: 2.8rem 2.4rem;
+  text-align: center;
+  /* background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  ); */
+  backdrop-filter: blur(0.6rem);
+  /* border: 0.1rem solid rgba(255, 255, 255, 0.08); */
+
+  background: var(--card-bg);
+  border: 0.1rem solid var(--border-color);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  -webkit-border-radius: 1.8rem;
+  -moz-border-radius: 1.8rem;
+  -ms-border-radius: 1.8rem;
+  -o-border-radius: 1.8rem;
+  border-radius: 1.8rem;
+}
+
+/* Hover effect */
+.country-card:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+  -webkit-transform: translateY(-1rem);
+  -moz-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  -o-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+}
+
+/* Flag */
+.country-card .flag {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* Title */
+.country-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* Description */
+.country-card p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Country */
+
+/* How It Works */
+
+/* ================================
+   HOW IT WORKS SECTION
+   ================================ */
+
+.how-it-works {
+  padding: 10rem 0;
+  background: var(--background);
+}
+
+.hiw-header {
+  text-align: center;
+  margin: 0 auto 6rem;
+}
+
+.hiw-header h2.heading {
+  margin-bottom: 1.2rem;
+}
+
+.hiw-header p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ================================
+   STEPS GRID
+   ================================ */
+
+.hiw-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.8rem;
+}
+
+/* ================================
+   STEP CARD
+   ================================ */
+
+.hiw-card {
+  flex: 1 1 26rem;
+  background: var(--card-bg);
+  border: 0.1rem solid var(--border-color);
+  border-radius: 20px;
+  padding: 3.2rem 2.8rem;
+  position: relative;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.hiw-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--accent), transparent 80%);
+  -webkit-transform: translateY(-1rem);
+  -moz-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  -o-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+}
+
+/* ================================
+   STEP NUMBER BADGE
+   ================================ */
+
+.hiw-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 50%;
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--accent), transparent 85%);
+}
+
+/* ================================
+   CONTENT
+   ================================ */
+
+.hiw-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.hiw-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* How It Works */
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
