@@ -49,9 +49,7 @@ p {
   color: var(--para-color);
 }
 
-/* ================================
-   BASE VARIABLES (Default Theme)
-   ================================ */
+
 
 :root {
   --primary: #2563eb;
@@ -79,9 +77,7 @@ body.dark-theme {
   --border-color: #1e293b;
   --accent: #67e8f9;
 }
-/* ================================
-   CALM GLOBAL THEME
-   ================================ */
+
 
 body.calm-theme {
   --primary: #059669;
@@ -97,9 +93,7 @@ body.calm-theme {
   display: none;
 }
 
-/* 
-    Container
-*/
+
 
 .container {
   width: 100%;
@@ -109,7 +103,7 @@ body.calm-theme {
   margin-left: auto;
 }
 
-/* Header */
+
 
 .header {
   width: 100%;
@@ -127,7 +121,7 @@ body.calm-theme {
   max-width: 20%;
 }
 
-/* Site Slogan */
+
 
 .site-slogan {
   width: 100%;
@@ -143,7 +137,7 @@ body.calm-theme {
   color: #fff;
 }
 
-/* Base text hidden */
+
 .site-slogan h1 {
   color: transparent;
 }
@@ -157,7 +151,7 @@ body.calm-theme {
   animation: slogan1 9s infinite;
 }
 
-/* Second slogan */
+
 .site-slogan h1::after {
   content: "Smart Preparation";
   position: absolute;
@@ -167,7 +161,7 @@ body.calm-theme {
   animation: slogan2 9s infinite;
 }
 
-/* Third slogan */
+
 .site-slogan::after {
   content: "Global Journey";
   display: block;
@@ -179,7 +173,7 @@ body.calm-theme {
   animation: slogan3 9s infinite;
 }
 
-/* Animations */
+
 @keyframes slogan1 {
   0%,
   30% {
@@ -227,7 +221,7 @@ body.calm-theme {
   }
 }
 
-/* Site Slogan */
+
 
 .header .menu-bars a {
   display: none;
@@ -294,16 +288,14 @@ body.calm-theme {
   padding: 1rem 2rem;
 }
 
-/* Header */
 
-/* Hero Section */
 
 .hero {
   width: 100%;
   padding: 20rem 0;
   width: 100%;
-  /* background-color: var(--accent); */
-  /* background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%); */
+
+  
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 .hero .hero-wrapper {
@@ -329,9 +321,7 @@ body.calm-theme {
   margin-bottom: 3rem;
 }
 
-/* Hero Section */
 
-/* Problem & Categories*/
 
 .categories,
 .problem {
@@ -422,16 +412,12 @@ body.calm-theme {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-/* Problem & Categories */
 
-/* Country */
-
-/* COUNTRIES SECTION */
 .countries {
   width: 100%;
 }
 
-/* Flex layout */
+
 .country-flex {
   display: flex;
   flex-wrap: wrap;
@@ -440,7 +426,7 @@ body.calm-theme {
   margin-top: 5rem;
 }
 
-/* Card */
+
 .country-card {
   flex: 1 1 22rem;
   max-width: 26rem;
@@ -499,13 +485,7 @@ body.calm-theme {
   line-height: 1.5;
 }
 
-/* Country */
 
-/* How It Works */
-
-/* ================================
-   HOW IT WORKS SECTION
-   ================================ */
 
 .how-it-works {
   padding: 10rem 0;
@@ -527,9 +507,6 @@ body.calm-theme {
   line-height: 1.7;
 }
 
-/* ================================
-   STEPS GRID
-   ================================ */
 
 .hiw-steps {
   display: flex;
@@ -537,9 +514,7 @@ body.calm-theme {
   gap: 2.8rem;
 }
 
-/* ================================
-   STEP CARD
-   ================================ */
+
 
 .hiw-card {
   flex: 1 1 26rem;
@@ -564,9 +539,7 @@ body.calm-theme {
   transform: translateY(-1rem);
 }
 
-/* ================================
-   STEP NUMBER BADGE
-   ================================ */
+
 
 .hiw-step {
   display: inline-flex;
@@ -582,9 +555,7 @@ body.calm-theme {
   background: color-mix(in srgb, var(--accent), transparent 85%);
 }
 
-/* ================================
-   CONTENT
-   ================================ */
+
 
 .hiw-card h3 {
   font-size: 1.8rem;
@@ -1040,3 +1011,4 @@ body.calm-theme {
     max-width: 1320px;
   }
 }
+
