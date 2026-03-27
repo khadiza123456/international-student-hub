@@ -2086,6 +2086,448 @@ footer {
 
 /* Student Experience Page */
 
+/* Country Guide Page */
+
+/* Search Section */
+.search-section {
+  background: var(--card-bg);
+  padding: 3rem 0;
+  margin: 5rem auto 3rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  max-width: 110rem;
+  position: relative;
+  z-index: 10;
+}
+
+.search-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.search-box-country {
+  display: flex;
+  max-width: 60rem;
+  margin: 0 auto 1.5rem;
+  box-shadow: var(--shadow-md);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  transition: border-color 0.3s;
+}
+
+.search-box-country:focus-within {
+  border-color: var(--primary);
+}
+
+.search-box-country input {
+  flex: 1;
+  padding: 1.2rem 1.5rem;
+  border: none;
+  font-size: 1.5rem;
+  background: white;
+  outline: none;
+}
+
+.search-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.search-btn:hover {
+  background: #1d4ed8;
+}
+
+.search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.tag {
+  background: var(--background);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid var(--border-color);
+}
+
+.tag:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Country Grid */
+.section-title {
+  text-align: center;
+  margin: 4rem 0 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title p {
+  color: var(--text-secondary);
+  max-width: 70rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+/* Popular Countries Section - Fixed */
+/* Popular Countries Section - Fixed Compact Design */
+.popular-countries {
+  padding: 3rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    rgba(248, 250, 252, 0.3) 100%
+  );
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+.section-title p {
+  color: var(--text-secondary);
+  max-width: 60rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Popular Countries Section - Fixed */
+.popular-countries {
+  padding: 4rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    rgba(248, 250, 252, 0.5) 100%
+  );
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+.country-card-guide {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-card-guide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  z-index: 2;
+}
+
+.country-card-guide:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent);
+}
+
+.country-flag {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.country-flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.country-card-guide:hover .country-flag img {
+  transform: scale(1.1);
+}
+
+.flag-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.country-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.country-badge i {
+  font-size: 1rem;
+}
+
+.country-info {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.country-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.country-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.country-description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+.country-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  background: rgba(248, 250, 252, 0.8);
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.stat {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.country-highlights {
+  list-style: none;
+  margin: 1.5rem 0;
+  flex-grow: 1;
+}
+
+.country-highlights li {
+  padding: 0.7rem 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+  transition: transform 0.3s;
+}
+
+.country-highlights li:hover {
+  transform: translateX(5px);
+}
+
+.country-highlights li:last-child {
+  border-bottom: none;
+}
+
+.country-highlights li i {
+  color: var(--success);
+  margin-right: 12px;
+  font-size: 1rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.view-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: auto;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.view-guide-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #0891b2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.view-guide-btn i {
+  transition: transform 0.3s;
+}
+
+.view-guide-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Rating stars */
+.rating {
+  display: flex;
+  gap: 2px;
+  margin-top: 0.5rem;
+}
+
+.rating i {
+  color: var(--warning);
+  font-size: 1rem;
+}
+
+/* Responsive design */
+
+/* Comparison Section */
+.comparison-section {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.03) 0%,
+    rgba(6, 182, 212, 0.03) 100%
+  );
+  border-radius: 24px;
+  padding: 4rem;
+  margin: 4rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.comparison-table {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+thead {
+  background: var(--primary);
+  color: white;
+}
+
+th {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+
+td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+}
+
+tbody tr {
+  transition: background-color 0.3s;
+}
+
+tbody tr:hover {
+  background: var(--background);
+}
+
+/* Country Guide Page */
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
