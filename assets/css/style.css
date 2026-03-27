@@ -1690,6 +1690,402 @@ footer {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Student Experience Page */
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0;
+  background-color: var(--card-bg);
+  border-radius: 0 0 24px 24px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.hero-content p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.hero-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-banner {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Main Content Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title p {
+  color: var(--text-secondary);
+  max-width: 70rem;
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
+}
+
+/* Experience Categories */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.category-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  border: 1px solid var(--border-color);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-icon {
+  width: 7rem;
+  height: 7rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.category-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.category-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.category-features {
+  list-style: none;
+}
+
+.category-features li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.category-features li i {
+  color: var(--success);
+  margin-right: 10px;
+}
+
+/* Student Stories */
+.stories-container {
+  position: relative;
+}
+
+.stories-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.story-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+}
+
+.story-image {
+  height: 20rem;
+  overflow: hidden;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.story-card:hover .story-image img {
+  transform: scale(1.05);
+}
+
+.story-content {
+  padding: 1.5rem;
+}
+
+.student-info {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+
+.student-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.student-details h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.student-details p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.story-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+.story-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+/* Resources Section */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.3s;
+}
+
+.resource-card:hover {
+  transform: translateX(5px);
+}
+
+.resource-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resource-card h3 i {
+  color: var(--primary);
+}
+
+.resource-links {
+  list-style: none;
+}
+
+.resource-links li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resource-links li:last-child {
+  border-bottom: none;
+}
+
+.resource-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s;
+}
+
+.resource-links a:hover {
+  color: var(--primary);
+}
+
+/* Tips Section */
+.tips-container {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.05) 0%,
+    rgba(6, 182, 212, 0.05) 100%
+  );
+  border-radius: 24px;
+  padding: 4rem;
+  margin: 4rem 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tip-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.tip-number {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tip-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+.tip-content p {
+  color: var(--text-secondary);
+}
+
+.btn-ex {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 2.5rem;
+  background: white;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.btn-ex:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: white;
+  color: white;
+  margin-left: 1rem;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Student Experience Page */
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
