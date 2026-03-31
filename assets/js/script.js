@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         e.preventDefault();
         navigation.classList.toggle('open');
     });
-  // Study Abroad Journey Timeline
+
+    
+
+
+    // Study Abroad Journey Timeline
     
     document.addEventListener('click', function(event) {
         const timelineContent = event.target.closest('.timeline-content');
@@ -66,8 +70,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
         toggleDetails(1);
     }, 300);
 
+    // Add hover effect to category cards
+          const categoryCards = document.querySelectorAll(".category-card");
+          categoryCards.forEach((card) => {
+            card.addEventListener("mouseenter", () => {
+              card.style.transform = "translateY(-8px)";
+            });
 
-  // Search functionality
+            card.addEventListener("mouseleave", () => {
+              card.style.transform = "translateY(0)";
+            });
+          });
+
+          // Add click effect to resource cards
+          const resourceCards = document.querySelectorAll(".resource-card");
+          resourceCards.forEach((card) => {
+            card.addEventListener("click", () => {
+              card.style.transform = "translateX(5px)";
+              setTimeout(() => {
+                card.style.transform = "translateX(0)";
+              }, 300);
+            });
+          });
+
+
+           // Search functionality
           const searchInput = document.querySelector(".search-box-country input");
           const searchBtn = document.querySelector(".search-btn");
           const tags = document.querySelectorAll(".tag");
@@ -637,10 +664,8 @@ document.addEventListener('click', (e) => {
         closeModal();
     }
 });
-    
 
-});
-//   Contact Page
+    //   Contact Page
 
     // Contact Form Submission
           const contactForm = document.getElementById("contactForm");
@@ -672,9 +697,6 @@ document.addEventListener('click', (e) => {
                 return;
               }
 
-
-
-              
               // Show loading state
               const submitBtn = contactForm.querySelector(".submit-btn");
               const originalText = submitBtn.innerHTML;
@@ -748,10 +770,6 @@ document.addEventListener('click', (e) => {
               this.parentElement.style.transform = "translateY(0)";
             });
           });
-
-
-
-
 
           // Team member hover effect
           const teamMembers = document.querySelectorAll(".team-member");
@@ -842,8 +860,6 @@ document.addEventListener('click', (e) => {
             });
           });
 
-
-
           // CTA Buttons
           const ctaButtons = document.querySelectorAll(".cta-section .btn");
           ctaButtons.forEach((btn) => {
@@ -874,9 +890,6 @@ document.addEventListener('click', (e) => {
               }
             });
           });
-
-
-
 
           // Animate achievement numbers on scroll
           const achievementNumbers = document.querySelectorAll(
@@ -916,9 +929,6 @@ document.addEventListener('click', (e) => {
             animated = true;
           }
 
-
-
-
           // Intersection Observer for achievements
           const achievementsSection = document.querySelector(
             ".achievements-section",
@@ -940,8 +950,6 @@ document.addEventListener('click', (e) => {
 
 
 
-
-
         //   Theme Swicher
 
         // Theme Switcher Module
@@ -959,10 +967,7 @@ const ThemeManager = {
         this.loadSavedTheme();
         this.attachEvents();
     },
-
-
-
-  
+    
     attachEvents: function() {
         this.themeLinks.forEach((link, index) => {
             link.addEventListener('click', (e) => {
@@ -974,17 +979,12 @@ const ThemeManager = {
             });
         });
     },
-
-
-
-  
+    
     loadSavedTheme: function() {
         const savedTheme = localStorage.getItem('ish-theme') || 'light';
         this.changeTheme(savedTheme, false);
     },
-
-
-  
+    
     changeTheme: function(theme, showToast = true) {
         // Set theme attribute
         document.documentElement.setAttribute('data-theme', theme);
@@ -994,32 +994,18 @@ const ThemeManager = {
         
         // Update active button
         this.updateActiveButton(theme);
-
-
-
-      
+        
         // Show notification
         if (showToast) {
             this.showToast(theme);
         }
         
-
-
-
-
-
-
-
-
-      
+        // Dispatch custom event
         window.dispatchEvent(new CustomEvent('themeChanged', { 
             detail: { theme: theme } 
         }));
     },
-
-
-
-  
+    
     updateActiveButton: function(theme) {
         this.themeButtons.forEach(btn => btn.classList.remove('active'));
         
@@ -1053,15 +1039,9 @@ const ThemeManager = {
             animation: slideIn 0.3s ease;
             font-weight: 500;
         `;
-
-
-
-      
+        
         document.body.appendChild(toast);
-
-
-
-      
+        
         setTimeout(() => {
             toast.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => toast.remove(), 300);
@@ -1069,11 +1049,9 @@ const ThemeManager = {
     }
 };
 
-
-
-
-
     ThemeManager.init();
     
 
 });
+
+
