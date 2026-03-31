@@ -1,14 +1,26 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("../webfonts/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 html {
   font-size: 62.5%;
+  font-family: "Montserrat", Times, serif;
 }
 body {
   background-color: var(--background);
   color: var(--text-primary);
+  font-family: "Montserrat", Times, serif;
   position: relative;
   overflow-x: hidden;
 }
