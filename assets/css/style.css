@@ -50,6 +50,9 @@ p {
 }
 
 
+/* ================================
+   BASE VARIABLES (Default Theme)
+   ================================ */
 
 :root {
   --primary: #2563eb;
@@ -61,13 +64,16 @@ p {
   --border-color: #e2e8f0;
   --accent: #38bdf8;
   --gutter-x: 2rem;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
 }
 
 /* ================================
    DARK THEME
    ================================ */
 
-body.dark-theme {
+[data-theme="dark"] {
   --primary: #6366f1;
   --secondary: #22d3ee;
   --background: #020617;
@@ -77,9 +83,11 @@ body.dark-theme {
   --border-color: #1e293b;
   --accent: #67e8f9;
 }
+/* ================================
+   CALM GLOBAL THEME
+   ================================ */
 
-
-body.calm-theme {
+[data-theme="calm"] {
   --primary: #059669;
   --secondary: #facc15;
   --background: #ecfeff;
@@ -89,6 +97,8 @@ body.calm-theme {
   --border-color: #a7f3d0;
   --accent: #2dd4bf;
 }
+
+
 .d-none {
   display: none;
 }
