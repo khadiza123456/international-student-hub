@@ -640,3 +640,440 @@ document.addEventListener('click', (e) => {
     
 
 });
+//   Contact Page
+
+    // Contact Form Submission
+          const contactForm = document.getElementById("contactForm");
+          if (contactForm) {
+            contactForm.addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              // Get form data
+              const formData = {
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                country: document.getElementById("country").value,
+                inquiryType: document.getElementById("inquiryType").value,
+                message: document.getElementById("message").value,
+              };
+
+              // Validate form
+              if (
+                !formData.firstName ||
+                !formData.lastName ||
+                !formData.email ||
+                !formData.country ||
+                !formData.inquiryType ||
+                !formData.message
+              ) {
+                alert("Please fill all required fields");
+                return;
+              }
+
+
+
+              
+              // Show loading state
+              const submitBtn = contactForm.querySelector(".submit-btn");
+              const originalText = submitBtn.innerHTML;
+              submitBtn.innerHTML =
+                '<i class="fas fa-spinner fa-spin"></i> Sending...';
+              submitBtn.disabled = true;
+
+              // Simulate form submission
+              setTimeout(() => {
+                // Success message
+                alert(
+                  "Thank you for your message! We will contact you within 24 hours.",
+                );
+
+                // Reset form
+                contactForm.reset();
+
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+              }, 1500);
+            });
+          }
+
+          // FAQ Accordion
+          const faqItems = document.querySelectorAll(".faq-item");
+          faqItems.forEach((item) => {
+            const question = item.querySelector(".faq-question");
+            question.addEventListener("click", () => {
+              // Close all other items
+              faqItems.forEach((otherItem) => {
+                if (
+                  otherItem !== item &&
+                  otherItem.classList.contains("active")
+                ) {
+                  otherItem.classList.remove("active");
+                }
+              });
+
+              // Toggle current item
+              item.classList.toggle("active");
+            });
+          });
+
+          // Smooth scroll for navigation links
+          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+              const href = this.getAttribute("href");
+              if (href === "#") return;
+
+              const target = document.querySelector(href);
+              if (target) {
+                e.preventDefault();
+                window.scrollTo({
+                  top: target.offsetTop - 80,
+                  behavior: "smooth",
+                });
+              }
+            });
+          });
+
+          // Form input animations
+          const formControls = document.querySelectorAll(".form-control");
+          formControls.forEach((control) => {
+            // Add focus effect
+            control.addEventListener("focus", function () {
+              this.parentElement.style.transform = "translateY(-2px)";
+            });
+
+            control.addEventListener("blur", function () {
+              this.parentElement.style.transform = "translateY(0)";
+            });
+          });
+
+
+
+
+
+          // Team member hover effect
+          const teamMembers = document.querySelectorAll(".team-member");
+          teamMembers.forEach((member) => {
+            member.addEventListener("mouseenter", function () {
+              this.style.boxShadow = "0 15px 35px rgba(0, 0, 0, 0.1)";
+            });
+
+            member.addEventListener("mouseleave", function () {
+              this.style.boxShadow = "var(--shadow-md)";
+            });
+          });
+
+          // Contact info card animations
+          const infoCards = document.querySelectorAll(".info-card");
+          infoCards.forEach((card) => {
+            card.addEventListener("mouseenter", function () {
+              const icon = this.querySelector(".info-icon");
+              if (icon) {
+                icon.style.transform = "rotate(10deg) scale(1.1)";
+              }
+            });
+
+            card.addEventListener("mouseleave", function () {
+              const icon = this.querySelector(".info-icon");
+              if (icon) {
+                icon.style.transform = "rotate(0) scale(1)";
+              }
+            });
+          });
+
+
+        //   About Page
+
+        // Value cards hover effect
+          const valueCards = document.querySelectorAll(".value-card");
+          valueCards.forEach((card) => {
+            card.addEventListener("mouseenter", function () {
+              const icon = this.querySelector(".value-icon");
+              if (icon) {
+                icon.style.transform = "scale(1.1) rotate(5deg)";
+              }
+            });
+
+            card.addEventListener("mouseleave", function () {
+              const icon = this.querySelector(".value-icon");
+              if (icon) {
+                icon.style.transform = "scale(1) rotate(0)";
+              }
+            });
+          });
+
+          // Team cards hover effect
+          const teamCards = document.querySelectorAll(".team-card");
+          teamCards.forEach((card) => {
+            card.addEventListener("mouseenter", function () {
+              const avatar = this.querySelector(".member-avatar");
+              if (avatar) {
+                avatar.style.transform = "scale(1.05)";
+                avatar.style.boxShadow = "0 8px 25px rgba(37, 99, 235, 0.3)";
+              }
+            });
+
+            card.addEventListener("mouseleave", function () {
+              const avatar = this.querySelector(".member-avatar");
+              if (avatar) {
+                avatar.style.transform = "scale(1)";
+                avatar.style.boxShadow = "var(--shadow-md)";
+              }
+            });
+          });
+
+          // Partner items hover effect
+          const partnerItems = document.querySelectorAll(".partner-item");
+          partnerItems.forEach((item) => {
+            item.addEventListener("mouseenter", function () {
+              const icon = this.querySelector("i");
+              if (icon) {
+                icon.style.transform = "scale(1.2)";
+              }
+            });
+
+            item.addEventListener("mouseleave", function () {
+              const icon = this.querySelector("i");
+              if (icon) {
+                icon.style.transform = "scale(1)";
+              }
+            });
+          });
+
+
+
+          // CTA Buttons
+          const ctaButtons = document.querySelectorAll(".cta-section .btn");
+          ctaButtons.forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+              e.preventDefault();
+
+              if (this.classList.contains("btn-outline")) {
+                alert("Downloading International Student Hub brochure...");
+              } else {
+                alert("Redirecting to consultation booking page...");
+              }
+            });
+          });
+
+          // Smooth scroll for navigation
+          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+              const href = this.getAttribute("href");
+              if (href === "#") return;
+
+              const target = document.querySelector(href);
+              if (target) {
+                e.preventDefault();
+                window.scrollTo({
+                  top: target.offsetTop - 80,
+                  behavior: "smooth",
+                });
+              }
+            });
+          });
+
+
+
+
+          // Animate achievement numbers on scroll
+          const achievementNumbers = document.querySelectorAll(
+            ".achievement-number",
+          );
+          let animated = false;
+
+          function animateNumbers() {
+            if (animated) return;
+
+            achievementNumbers.forEach((number) => {
+              const value = number.innerText.replace(/[^0-9]/g, "");
+              if (value) {
+                let start = 0;
+                let end = parseInt(value);
+                let duration = 2000;
+                let increment = end / (duration / 16);
+
+                let timer = setInterval(() => {
+                  start += increment;
+                  if (start >= end) {
+                    number.innerText = number.innerText.replace(
+                      /[0-9,]+/,
+                      end.toLocaleString(),
+                    );
+                    clearInterval(timer);
+                  } else {
+                    number.innerText = number.innerText.replace(
+                      /[0-9,]+/,
+                      Math.floor(start).toLocaleString(),
+                    );
+                  }
+                }, 16);
+              }
+            });
+
+            animated = true;
+          }
+
+
+
+
+          // Intersection Observer for achievements
+          const achievementsSection = document.querySelector(
+            ".achievements-section",
+          );
+          if (achievementsSection) {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    animateNumbers();
+                  }
+                });
+              },
+              { threshold: 0.5 },
+            );
+
+            observer.observe(achievementsSection);
+          }
+
+
+
+
+
+        //   Theme Swicher
+
+        // Theme Switcher Module
+const ThemeManager = {
+    init: function() {
+        this.themes = {
+            light: { icon: 'fa-sun', name: 'Light Mode' },
+            dark: { icon: 'fa-moon', name: 'Dark Mode' },
+            calm: { icon: 'fa-mountain', name: 'Calm Mode' }
+        };
+        
+        this.themeButtons = document.querySelectorAll('.all-site--modes li');
+        this.themeLinks = document.querySelectorAll('.all-site--modes li a');
+        
+        this.loadSavedTheme();
+        this.attachEvents();
+    },
+
+
+
+  
+    attachEvents: function() {
+        this.themeLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                let theme = 'light';
+                if (index === 1) theme = 'dark';
+                if (index === 2) theme = 'calm';
+                this.changeTheme(theme);
+            });
+        });
+    },
+
+
+
+  
+    loadSavedTheme: function() {
+        const savedTheme = localStorage.getItem('ish-theme') || 'light';
+        this.changeTheme(savedTheme, false);
+    },
+
+
+  
+    changeTheme: function(theme, showToast = true) {
+        // Set theme attribute
+        document.documentElement.setAttribute('data-theme', theme);
+        
+        // Save to localStorage
+        localStorage.setItem('ish-theme', theme);
+        
+        // Update active button
+        this.updateActiveButton(theme);
+
+
+
+      
+        // Show notification
+        if (showToast) {
+            this.showToast(theme);
+        }
+        
+
+
+
+
+
+
+
+
+      
+        window.dispatchEvent(new CustomEvent('themeChanged', { 
+            detail: { theme: theme } 
+        }));
+    },
+
+
+
+  
+    updateActiveButton: function(theme) {
+        this.themeButtons.forEach(btn => btn.classList.remove('active'));
+        
+        if (theme === 'light') this.themeButtons[0]?.classList.add('active');
+        if (theme === 'dark') this.themeButtons[1]?.classList.add('active');
+        if (theme === 'calm') this.themeButtons[2]?.classList.add('active');
+    },
+    
+    showToast: function(theme) {
+        const themeName = this.themes[theme].name;
+        const toast = document.createElement('div');
+        toast.className = 'theme-toast';
+        toast.innerHTML = `
+            <i class="fas fa-check-circle"></i>
+            <span>${themeName} activated</span>
+        `;
+        
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            font-weight: 500;
+        `;
+
+
+
+      
+        document.body.appendChild(toast);
+
+
+
+      
+        setTimeout(() => {
+            toast.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    }
+};
+
+
+
+
+
+    ThemeManager.init();
+    
+
+});
