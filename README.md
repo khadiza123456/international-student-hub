@@ -16,20 +16,57 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 | Section | Description |
 | :--- | :--- |
-| **🌍 Country-wise Study Guide** | Detailed information on education systems, living costs, and cultural nuances for different countries. |
+| **🌍 Country-wise Study Guide** | Detailed information on education systems, living costs, and culture of different countries. |
+
 | **🎓 Higher Studies Information** | Covers admission processes, university insights, and the basics of securing scholarships. |
+
 | **🧭 Study Abroad Journey Guide** | A complete walkthrough of the student lifecycle: **Dream → Preparation → Arrival → Adjustment → Growth**. |
+
 | **🧠 Student Experience (Narrative-Based)** | Real-life stories, challenges, culture shock experiences, and lifestyle adaptation tips. |
+
 | **🚍 Transport & Daily Life Guide** | Practical advice on public transport, commuting, and getting around in a new country. |
+
 | **🍜 Food & Culture Insights** | Information on local food habits, cultural norms, and how to navigate social differences. |
+
 | **💼 Part-time Work Awareness** | Reality checks on student jobs, work-life balance, and legal considerations. |
+
 | **🏠 Living & Accommodation Info** | Insights into housing types, rent expectations, and lifestyle management. |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 🧑‍🎓 User Experience Features
 
 - **Student-Centric Design:** All information is presented from a student's perspective to ensure relevance and empathy.
-- **Story-Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry, data-heavy formats.
+  
+- **Story-Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry.
+  
 - **Guidance-Focused Platform:** The sole purpose is to provide awareness and preparation resources. No management system, no clutter—just guidance.
+
+
+
+
+
 
 ### 🎨 UI / UX Features
 
