@@ -12,10 +12,13 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 ## ✨ Core Features
 
+
 ### 📚 Informational Sections
+
 
 | Section | Description |
 | :--- | :--- |
+
 | **🌍 Country-wise Study Guide** | Detailed information on education systems, living costs, and culture of different countries. |
 
 | **🎓 Higher Studies Information** | Covers admission processes, university insights, and the basics of securing scholarships. |
@@ -57,9 +60,15 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 ### 🧑‍🎓 User Experience Features
 
+
 - **Student-Centric Design:** All information is presented from a student's perspective to ensure relevance and empathy.
+
+ 
   
 - **Story-Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry.
+  
+
+
   
 - **Guidance-Focused Platform:** The sole purpose is to provide awareness and preparation resources. No management system, no clutter—just guidance.
 
@@ -70,20 +79,33 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 ### 🎨 UI / UX Features
 
-- **🌗 Theme Switching:** Users can choose between **Light**, **Dark**, and **Calm** visual themes for a personalized experience.
+
+
+- **🌗 Theme Switching:
+
+
+
+- ** Users can choose between **Light**, **Dark** and **Calm** visual themes for a personalized experience.
+  
 - **Modern Minimal Design:** A clean, distraction-free interface that prioritizes readability and ease of navigation.
+
 - **Smooth Hover & Interaction Effects:** Subtle animations that enhance interactivity without compromising performance.
+  
 - **📱 Fully Responsive Layout:** Provides an optimal viewing experience across all devices—mobile, tablet, and desktop.
+  
 
 ### ⚙️ Technical Features
 
+
+
 - **💻 Pure HTML & CSS:** Built without any external frameworks, ensuring a lightweight and beginner-friendly codebase.
-- **🎨 CSS Variable-Based Design System:** Centralized control over colors, themes, and spacing for easy maintenance and scalability.
+- **🎨 CSS Variable-Based Design System:** Centralized control over colors, themes and spacing for easy maintenance and scalability.
 - **⚡ Fast & Optimized:** No heavy scripts, ensuring quick loading times and a smooth user experience.
 
 ---
 
 ## 🚀 Getting Started
+
 
 To view or contribute to this project locally, follow these steps:
 
@@ -124,8 +146,16 @@ study-abroad-companion/
 
 ---
 
-## 🤝 Contributing
 
+
+
+
+
+
+
+
+
+## 🤝 Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
@@ -138,17 +168,25 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ---
 
+
+
+
+
 ## 📄 License
+
+
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
+
 ## 🙏 Acknowledgements
+
 
 - All the students and alumni who shared their invaluable experiences.
 - The open-source community for their tools and inspiration.
 
 ---
 
-**Happy Studying! 🎓**
+**Happy Studying!🎓**
