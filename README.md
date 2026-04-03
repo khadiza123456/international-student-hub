@@ -2,7 +2,9 @@
 
 **This is Complete Guide to Navigating Higher Studies Abroad**
 
+
 A student-centric platform designed to be a comprehensive, narrative-driven guide for students aspiring to study overseas. This project focuses purely on awareness, preparation, and real-life insights—moving beyond management systems to provide genuine, helpful guidance.
+
 
 
 
@@ -11,7 +13,7 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 
----
+
 
 
 
@@ -30,21 +32,22 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 | Section | Description |
 | :--- | :--- |
 
- **Country-wise Study Guide** - In-depth overviews of popular study destinations. Covers education systems, immigration basics, living costs, safety, lifestyleand cultural expectations.
+ **Country-wise Study Guide:**  In-depth overviews of popular study destinations. Covers education systems, immigration basics, living costs, safety, lifestyleand cultural expectations.
 
-**Higher Studies Information** - Covers admission processes, university insights, and the basics of securing scholarships. Admission basics, degree pathways, university types, scholarship awareness, SOP/LOR fundamentals, and selection decision strategies.|
+**Higher Studies Information:**  Covers admission processes, university insights, and the basics of securing scholarships. Admission basics, degree pathways, university types, scholarship awareness, SOP/LOR fundamentals, and selection decision strategies.
 
- **Study Abroad Journey Guide** - A complete walkthrough of the student lifecycle: **Dream → Preparation → Arrival → Adjustment → Growth**. Helps students understand the psychological and practical journey.
+ **Study Abroad Journey Guide:**  A complete walkthrough of the student lifecycle: **Dream-Preparation-Arrival-Adjustment - Growth**.
+ Helps students understand the psychological and practical journey.
 
- **Student Experience** - Real-life stories, challenges, culture shock experiences and lifestyle adaptation tips. 
+ **Student Experience:** Real life stories, challenges, culture shock experiences and lifestyle adaptation tips. 
 
- **Transport & Daily Life Guide** - Practical advice on public transport, commuting, and getting around in a new country. 
+ **Transport & Daily Life Guide:** Practical advice on public transport, commuting and getting around in a new country.
 
- **Food & Culture Insights**  cultural norms, and how to navigate social differences. Local food habits, what to expect in restaurants, grocery store tips, cultural etiquette, and social norms
+ **Food & Culture Insights:** Cultural norms, and how to navigate social differences. Local food habits, what to expect in restaurants, grocery store tips, cultural etiquette, and social norms
 
- **Part-time Work Awareness** Legal working hours, job types, work culture insights, time management strategies, and realistic earning expectations. Reality checks on student jobs, work-life balance, and legal considerations. 
+ **Part-time Work Awareness:** Legal working hours, job types, work culture insights, time management strategies, and realistic earning expectations. Reality checks on student jobs, work-life balance, and legal considerations. 
 
-**Living & Accommodation Info** Insights into housing types, rent expectations, and lifestyle management.Types of housing (hostel, shared rooms, studio, homestay), rent expectations, utilities, and lifestyle budgeting.
+**Living & Accommodation Info:** Insights into housing types, rent expectations, and lifestyle management.Types of housing (hostel, shared rooms, studio, homestay), rent expectations, utilities, and lifestyle budgeting.
 
 
 
@@ -75,7 +78,7 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 ###  User Experience Features
 
 
- **Student-Centric Design:** Content written from the viewpoint of a student to make explanations relatable and practical.
+ **Student Centric Design:** Content written from the viewpoint of a student to make explanations relatable and practical.
 
  
 
@@ -87,12 +90,12 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 
   
- **Story-Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry.
+ **Story Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry.
   
 
 
   
-**Guidance-Focused Platform:** The sole purpose is to provide awareness and preparation resources. No management system, no clutter—just guidance.
+**Guidance Focused Platform:** The sole purpose is to provide awareness and preparation resources. No management system, no clutter—just guidance.
 
 
 
@@ -108,9 +111,9 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 
 
- **Multi-Theme Appearance**:
- Theme Switching:
 
+ **Multi-Theme Appearance:**
+ 
 
 
  **Users can choose between:** **Light**, **Dark** and **Calm** visual themes for a personalized experience.
@@ -218,7 +221,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 4.  Push to the Branch (`git push origin feature/AmazingFeature`)
 5.  Open a Pull Request
 
----
+
 
 
 
@@ -236,7 +239,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
----
+
 
 
 
