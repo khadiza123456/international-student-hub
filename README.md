@@ -30,21 +30,21 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 | Section | Description |
 | :--- | :--- |
 
-| **Country-wise Study Guide** | In-depth overviews of popular study destinations. Covers education systems, immigration basics, living costs, safety, lifestyleand cultural expectations.
+ **Country-wise Study Guide** - In-depth overviews of popular study destinations. Covers education systems, immigration basics, living costs, safety, lifestyleand cultural expectations.
 
-| **Higher Studies Information** | Covers admission processes, university insights, and the basics of securing scholarships. Admission basics, degree pathways, university types, scholarship awareness, SOP/LOR fundamentals, and selection decision strategies.|
+**Higher Studies Information** - Covers admission processes, university insights, and the basics of securing scholarships. Admission basics, degree pathways, university types, scholarship awareness, SOP/LOR fundamentals, and selection decision strategies.|
 
-| **Study Abroad Journey Guide** | A complete walkthrough of the student lifecycle: **Dream → Preparation → Arrival → Adjustment → Growth**. Helps students understand the psychological and practical journey.|
+ **Study Abroad Journey Guide** - A complete walkthrough of the student lifecycle: **Dream → Preparation → Arrival → Adjustment → Growth**. Helps students understand the psychological and practical journey.
 
-| **Student Experience** | Real-life stories, challenges, culture shock experiences and lifestyle adaptation tips. |
+ **Student Experience** - Real-life stories, challenges, culture shock experiences and lifestyle adaptation tips. 
 
-| **Transport & Daily Life Guide** | Practical advice on public transport, commuting, and getting around in a new country. |
+ **Transport & Daily Life Guide** - Practical advice on public transport, commuting, and getting around in a new country. 
 
-| **Food & Culture Insights** | cultural norms, and how to navigate social differences. Local food habits, what to expect in restaurants, grocery store tips, cultural etiquette, and social norms|
+ **Food & Culture Insights**  cultural norms, and how to navigate social differences. Local food habits, what to expect in restaurants, grocery store tips, cultural etiquette, and social norms
 
-| **Part-time Work Awareness** |Legal working hours, job types, work culture insights, time management strategies, and realistic earning expectations. Reality checks on student jobs, work-life balance, and legal considerations. |
+ **Part-time Work Awareness** Legal working hours, job types, work culture insights, time management strategies, and realistic earning expectations. Reality checks on student jobs, work-life balance, and legal considerations. 
 
-| **Living & Accommodation Info** |Insights into housing types, rent expectations, and lifestyle management.Types of housing (hostel, shared rooms, studio, homestay), rent expectations, utilities, and lifestyle budgeting.|
+**Living & Accommodation Info** Insights into housing types, rent expectations, and lifestyle management.Types of housing (hostel, shared rooms, studio, homestay), rent expectations, utilities, and lifestyle budgeting.
 
 
 
@@ -75,7 +75,7 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 ###  User Experience Features
 
 
-- **Student-Centric Design:** Content written from the viewpoint of a student to make explanations relatable and practical.
+ **Student-Centric Design:** Content written from the viewpoint of a student to make explanations relatable and practical.
 
  
 
@@ -87,17 +87,17 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 
   
-- **Story-Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry.
+ **Story-Based Content Layout:** Content is organized in a narrative style to make learning engaging and relatable, moving away from dry.
   
 
 
   
-- **Guidance-Focused Platform:** The sole purpose is to provide awareness and preparation resources. No management system, no clutter—just guidance.
+**Guidance-Focused Platform:** The sole purpose is to provide awareness and preparation resources. No management system, no clutter—just guidance.
 
 
 
   
-- **Emotion-Aware Writing:** Sections include common fears, motivations, and emotional experiences to support first-time travelers.
+ **Emotion-Aware Writing:** Sections include common fears, motivations, and emotional experiences to support first-time travelers.
 
 
 
@@ -108,38 +108,41 @@ A student-centric platform designed to be a comprehensive, narrative-driven guid
 
 
 
-- **Multi-Theme Appearance:
-- Theme Switching:
+ **Multi-Theme Appearance**:
+ Theme Switching:
 
 
 
-- ** Users can choose between **Light**, **Dark** and **Calm** visual themes for a personalized experience.
+ **Users can choose between:** **Light**, **Dark** and **Calm** visual themes for a personalized experience.
   
-- **Modern Minimal Design:** A clean, distraction-free interface that prioritizes readability and ease of navigation.
+ **Modern Minimal Design:** A clean, distraction-free interface that prioritizes readability and ease of navigation.
 
-- **Smooth Hover & Interaction Effects:** Subtle animations that enhance interactivity without compromising performance.
+**Smooth Hover & Interaction Effects:** Subtle animations that enhance interactivity without compromising performance.
   
-- **Fully Responsive Layout:** Provides an optimal viewing experience across all devices—mobile, tablet, and desktop.
+**Fully Responsive Layout:** Provides an optimal viewing experience across all devices—mobile, tablet, and desktop.
   
 
 ###  Technical Features
 
 
 
-- **Pure HTML & CSS:** No frameworks—ideal for beginners who want to study or extend the project. Built without any external frameworks, ensuring a lightweight and beginner-friendly codebase.
+**Pure HTML & CSS:** No frameworks—ideal for beginners who want to study or extend the project. Built without any external frameworks, ensuring a lightweight and beginner-friendly codebase.
   
-- **CSS Variable-Based Design System:** Centralized control over colors, themes and spacing for easy maintenance and scalability.
+**CSS Variable-Based Design System:** Centralized control over colors, themes and spacing for easy maintenance and scalability.
 
 
 
 
 
 
-- **Lightweight & Fast:** No unnecessary scripts. Fast load times and minimal performance overhead.
+
+
+**Lightweight & Fast:** No unnecessary scripts. Fast load times and minimal performance overhead.
  **Fast & Optimized:** No heavy scripts, ensuring quick loading times and a smooth user experience.
-- **Lightweight & Fast**: Fast load times and minimal perfomance overhead.
+ 
+ **Lightweight & Fast**: Fast load times and minimal perfomance overhead.
 
----
+
 
 ##  Getting Started
 
@@ -176,21 +179,21 @@ To view or contribute to this project locally, follow these steps:
 
 ```
 study-abroad-companion/
-├── index.html              # Main HTML file
-     # Responsive design rules
+├── index.html             
+     
 ├── assets/
     ├── css/
-│        └── style.css           # Core styles and layout
+│        └── style.css         
 │       
 
     ├── js/
-│        └── script.js   # All script here        
+│        └── script.js        
 │               
 │    
-│   ├── images/             # All images and icons
+│   ├── images/             
 │   ├── webfonts/
-            └── fonts            # (Optional) Custom fonts
-└── README.md               # This file
+            └── fonts           
+└── README.md               
 ```
 
 ---
@@ -249,10 +252,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Acknowledgements
 
 
-- All the students and alumni who shared their invaluable experiences.
-- The open-source community for their tools and inspiration.
+All the students and alumni who shared their invaluable experiences.
+The open-source community for their tools and inspiration.
 
 ---
 
 **Happy Studying!**
-Your journey begins with awareness—and this platform is built to guide you every step of the way.
+
+
+Your journey begins with awareness and this platform is built to guide you every step of the way.
