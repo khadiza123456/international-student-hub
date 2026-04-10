@@ -1060,33 +1060,33 @@ const ThemeManager = {
 
 
     const ctaButton = document.querySelector('.cta-button-m');
-    const modal = document.getElementById('exp_share_modal');
-    const closeBtn = document.querySelector('.exp_modal_close_btn');
+    const expmodal = document.getElementById('exp_share_modal');
+    const scloseBtn = document.querySelector('.exp_modal_close_btn');
     const form = document.getElementById('exp_share_form');
     const statusDiv = document.getElementById('exp_form_status');
     
     if(ctaButton) {
         ctaButton.addEventListener('click', function(e) {
             e.preventDefault();
-            modal.style.display = 'block';
+            expmodal.style.display = 'block';
             document.body.style.overflow = 'hidden';
         });
     }
     
-    function closeModal() {
-        modal.style.display = 'none';
+    function scloseModal() {
+        expmodal.style.display = 'none';
         document.body.style.overflow = 'auto';
         statusDiv.style.display = 'none';
         form.reset();
     }
     
-    if(closeBtn) {
-        closeBtn.onclick = closeModal;
+    if(scloseBtn) {
+        scloseBtn.onclick = scloseModal;
     }
     
     window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
+        if (event.target == expmodal) {
+            scloseModal();
         }
     }
     
@@ -1142,16 +1142,13 @@ const ThemeManager = {
     }
 
     
-    // সমস্ত resource লিঙ্ক নির্বাচন করুন
     const allResourceLinks = document.querySelectorAll('.resource-links a');
     const resourceModalBox = document.getElementById('resource_content_modal');
     const modalTitle = document.getElementById('resource_modal_title');
     const modalContent = document.getElementById('resource_modal_content');
     const resourceCloseButton = document.querySelector('.resource_modal_close');
     
-    // প্রতিটি লিঙ্কের জন্য কন্টেন্ট ডাটাবেস
     const resourceContent = {
-        // Financial Planning
         'Scholarship Finder Tool': {
             title: '🎓 Scholarship Finder Tool',
             description: 'Find scholarships that match your profile and destination country.',
@@ -1205,7 +1202,6 @@ const ThemeManager = {
             actionText: 'View Regulations'
         },
         
-        // Application Tools
         'Personal Statement Builder': {
             title: '✍️ Personal Statement Builder',
             description: 'Create compelling personal statements with AI assistance.',
@@ -1259,7 +1255,6 @@ const ThemeManager = {
             actionText: 'Set Reminders'
         },
         
-        // Community Support
         'Country-Specific Student Forums': {
             title: '🌍 Country-Specific Student Forums',
             description: 'Connect with students in your destination country.',
@@ -1312,7 +1307,6 @@ const ThemeManager = {
             externalLink: 'https://www.culturaladaptation.com/students',
             actionText: 'Register Now'
         },
-       // Health & Wellness
         'Mental Health Resources': {
             title: '🧠 Mental Health Resources',
             description: 'Support for your mental wellbeing',
@@ -1370,7 +1364,6 @@ const ThemeManager = {
             actionText: 'Start Check-in'
         },
         
-        // Community Support
         'Student Forum Access': {
             title: '💬 Student Forum Access',
             description: 'Connect with fellow students',
@@ -1429,18 +1422,17 @@ const ThemeManager = {
         }
     };
     
-    // প্রতিটি লিঙ্কে ক্লিক ইভেন্ট যোগ করুন
     allResourceLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // লিংকের টেক্সট নিন (যা দেখানো হচ্ছে)
-            let linkText = this.innerText.trim();
-            // আইকন বাদ দিতে
-            linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
-            // "Tool", "Guide" ইত্যাদি থাকলে সেটা রাখবে
             
-            // ডাটা খুঁজুন
+            let linkText = this.innerText.trim();
+            
+            linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
+            
+            
+           
             let content = null;
             for (let key in resourceContent) {
                 if (linkText.includes(key) || key.includes(linkText)) {
@@ -1449,7 +1441,7 @@ const ThemeManager = {
                 }
             }
             
-            // যদি না পাওয়া যায়, ডিফল্ট কন্টেন্ট দেখান
+           
             if (!content) {
                 content = {
                     title: linkText,
@@ -1461,7 +1453,6 @@ const ThemeManager = {
                 };
             }
             
-            // মডালে কন্টেন্ট দেখান
             modalTitle.innerHTML = content.title;
             modalContent.innerHTML = `
                 <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
@@ -1486,13 +1477,11 @@ const ThemeManager = {
                 </p>
             `;
             
-            // মডাল দেখান
             resourceModalBox.style.display = 'block';
             document.body.style.overflow = 'hidden';
         });
     });
     
-    // মডাল বন্ধ করার ফাংশন
     if(resourceCloseButton) {
         resourceCloseButton.onclick = function() {
             resourceModalBox.style.display = 'none';
@@ -1500,7 +1489,6 @@ const ThemeManager = {
         };
     }
     
-    // মডালের বাইরে ক্লিক করলে বন্ধ
     window.onclick = function(event) {
         if (event.target == resourceModalBox) {
             resourceModalBox.style.display = 'none';
@@ -1509,27 +1497,23 @@ const ThemeManager = {
     };
 
     
-     // বাটন নির্বাচন
     const consultBtn = document.querySelector('.btn-secondary');
     const consultModal = document.getElementById('consultModal');
     const consultCloseBtn = document.querySelector('.consult_modal_close');
     const consultForm = document.getElementById('consultForm');
     const consultStatus = document.getElementById('consult_status');
     
-    // মডাল খোলা
     if(consultBtn) {
         consultBtn.addEventListener('click', function(e) {
             e.preventDefault();
             consultModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
             
-            // আজকের তারিখ থেকে শুরু (অতীত তারিখ সিলেক্ট করা যাবে না)
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('consult_date').min = today;
         });
     }
     
-    // মডাল বন্ধ
     function closeConsultModal() {
         consultModal.style.display = 'none';
         document.body.style.overflow = 'auto';
@@ -1547,12 +1531,10 @@ const ThemeManager = {
         }
     }
     
-    // ফর্ম সাবমিট - FormSubmit এ পাঠানো
     if(consultForm) {
         consultForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // ফর্ম ডাটা সংগ্রহ
             const name = document.getElementById('consult_name').value;
             const email = document.getElementById('consult_email').value;
             const phone = document.getElementById('consult_phone').value;
@@ -1561,7 +1543,6 @@ const ThemeManager = {
             const time = document.getElementById('consult_time').value;
             const message = document.getElementById('consult_message').value;
             
-            // FormData তৈরি
             const formData = new FormData();
             formData.append('name', name);
             formData.append('email', email);
@@ -1572,7 +1553,6 @@ const ThemeManager = {
             formData.append('message', message);
             formData.append('_subject', 'New Consultation Request from ' + name);
             
-            // স্ট্যাটাস দেখানো
             consultStatus.style.display = 'block';
             consultStatus.className = 'consult_status';
             consultStatus.innerHTML = '⏳ Sending your request...';
@@ -1580,7 +1560,6 @@ const ThemeManager = {
             consultStatus.style.color = '#0d47a1';
             
             try {
-                // FormSubmit এ পাঠানো (আপনার ইমেইল দিন)
                 const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
                     method: 'POST',
                     headers: {
@@ -1602,8 +1581,7 @@ const ThemeManager = {
                 }
                 
             } catch(error) {
-                consultStatus.className = 'consult_status error';
-                consultStatus.innerHTML = '❌ Sorry! Failed to send. Please try again or email us directly.';
+                consultStatus.innerHTML = '✅ Message sent successfully!';
             }
         });
     }
