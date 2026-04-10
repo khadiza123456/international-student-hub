@@ -453,7 +453,7 @@ function showCountryGuideModal(country) {
                     border-radius: 20px 20px 0 0;
                     position: relative;
                 ">
-                    <button onclick="closeModal()" style="
+                    <button onclick="ccloseModal()" style="
                         position: absolute;
                         top: 1rem;
                         right: 1rem;
@@ -654,7 +654,7 @@ window.viewCountryGuide = function(country) {
     }
 };
 
-window.closeModal = ccloseModal;
+window.ccloseModal = ccloseModal;
 window.downloadGuide = downloadGuide;
 
 // Close modal on ESC key
@@ -1591,6 +1591,11 @@ const ThemeManager = {
             return false;
         }
     });
+
+
+    window.scloseModal = scloseModal;
+
+    
 
 
 });
