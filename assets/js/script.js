@@ -1596,9 +1596,7 @@ const ThemeManager = {
     window.scloseModal = scloseModal;
     window.consultCloseBtn = closeConsultModal;
 
-    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-        this.querySelector('.submit-btn').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    });
+    
 
 
 });
