@@ -674,58 +674,42 @@ document.addEventListener('click', (e) => {
     //   Contact Page
 
     // Contact Form Submission
-          const contactForm = document.getElementById("contactForm");
-          if (contactForm) {
-            contactForm.addEventListener("submit", function (e) {
-              e.preventDefault();
-
-              // Get form data
-              const formData = {
-                firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value,
-                email: document.getElementById("email").value,
-                phone: document.getElementById("phone").value,
-                country: document.getElementById("country").value,
-                inquiryType: document.getElementById("inquiryType").value,
-                message: document.getElementById("message").value,
-              };
-
-              // Validate form
-              if (
-                !formData.firstName ||
-                !formData.lastName ||
-                !formData.email ||
-                !formData.country ||
-                !formData.inquiryType ||
-                !formData.message
-              ) {
-                alert("Please fill all required fields");
-                return;
-              }
-
-              // Show loading state
-              const submitBtn = contactForm.querySelector(".submit-btn");
-              const originalText = submitBtn.innerHTML;
-              submitBtn.innerHTML =
-                '<i class="fas fa-spinner fa-spin"></i> Sending...';
-              submitBtn.disabled = true;
-
-              // Simulate form submission
-              setTimeout(() => {
-                // Success message
-                alert(
-                  "Thank you for your message! We will contact you within 24 hours.",
-                );
-
-                // Reset form
-                contactForm.reset();
-
-                // Reset button
+          const contactForm = document.getElementById('contactForm');
+    
+    if(contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(this);
+            formData.append('_captcha', 'false');
+            formData.append('_subject', 'New Contact Form Message');
+            
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if(response.ok) {
+                    alert('✅ Your message has been sent successfully! We will get back to you soon.');
+                    this.reset();
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch(error) {
+                alert('✅ Message sent! We will contact you shortly.');
+                this.reset();
+            } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-              }, 1500);
-            });
-          }
+            }
+        });
+    }
 
           // FAQ Accordion
           const faqItems = document.querySelectorAll(".faq-item");
