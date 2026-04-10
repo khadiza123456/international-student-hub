@@ -87,7 +87,7 @@
           <p class="hero-p">
             A community-driven guide for international students worldwide.
           </p>
-          <a href="#" class="cta-button">Explore Student Guides</a>
+          <a href="study-abroad-journey.html" class="cta-button">Explore Student Guides</a>
         </div>
       </section>
 
@@ -401,15 +401,118 @@
           
             <h2 class="cta-title">Ready to Start Your Study Abroad Journey?</h2>
             <p class="cta-text">Join thousands of successful international students who have achieved their academic dreams with our guidance and support.</p>
-            <a href="#" class="cta-button">Share Your Experience</a>
+            <a href="#" class="cta-button-m">Share Your Experience</a>
         </div>
+
+        <div id="exp_share_modal" class="exp_modal_container">
+    <div class="exp_modal_wrapper">
+        <div class="exp_modal_header">
+            <h3 class="exp_modal_title">📝 Share Your Study Abroad Experience</h3>
+            <span class="exp_modal_close_btn">&times;</span>
+        </div>
+        <div class="exp_modal_body">
+            <!-- এখানে action দেওয়া লাগবে না, JS handle করবে -->
+            <form id="exp_share_form">
+                <div class="exp_form_group">
+                    <label class="exp_label">Your Full Name *</label>
+                    <input type="text" name="name" id="exp_name" class="exp_input" placeholder="e.g., Rahim Uddin" required>
+                </div>
+                <div class="exp_form_group">
+                    <label class="exp_label">Your Email *</label>
+                    <input type="email" name="email" id="exp_email" class="exp_input" placeholder="rahim@example.com" required>
+                </div>
+                <div class="exp_form_group">
+                    <label class="exp_label">Destination Country *</label>
+                    <select name="country" id="exp_country" class="exp_input" required>
+                        <option value="">Select Country</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+                <div class="exp_form_group">
+                    <label class="exp_label">Your Experience *</label>
+                    <textarea name="message" id="exp_message" class="exp_textarea" rows="4" placeholder="Share your journey, challenges, achievements, tips for others..." required></textarea>
+                </div>
+                <div class="exp_form_group">
+                    <button type="submit" class="exp_submit_btn">📧 Send Experience</button>
+                </div>
+                <div id="exp_form_status" class="exp_form_status"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
       </section>
 
-      <footer class="footer">
-        
-        
-            <p>© 2026 International Student Hub. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            <p>Connect with us: <a href="#"><i class="fab fa-facebook"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a></p>
+       <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-column">
+              <h3>International Student Hub</h3>
+              <p>
+                Your comprehensive guide to studying abroad. We provide
+                resources, tools, and support for every step of your
+                international education journey.
+              </p>
+            </div>
+
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Study Destinations</a></li>
+                <li><a href="#">Scholarship Database</a></li>
+                <li><a href="#">Student Blogs</a></li>
+                <li><a href="#">Success Stories</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Resources</h3>
+              <ul class="footer-links">
+                <li><a href="#">Visa Guides</a></li>
+                <li><a href="#">Financial Planning</a></li>
+                <li><a href="#">Exam Preparation</a></li>
+                <li><a href="#">Accommodation Finder</a></li>
+                <li><a href="#">Career Support</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Contact Us</h3>
+              <ul class="footer-links">
+                <li>
+                  <a href="#"
+                    ><i class="fas fa-envelope"></i> info@studenthub.com</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <p>
+              &copy; 2026 International Student Hub. All rights reserved. |
+              Privacy Policy | Terms of Service
+            </p>
+          </div>
+        </div>
       </footer>
     </main>
     <script src="assets/js/script.js"></script>

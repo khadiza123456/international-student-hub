@@ -748,6 +748,19 @@
             </div>
           </div>
         </div>
+        <div id="resource_content_modal" class="resource_modal_container">
+          <div class="resource_modal_wrapper">
+            <div class="resource_modal_header">
+              <h3 id="resource_modal_title" class="resource_modal_title">
+                Resource Details
+              </h3>
+              <span class="resource_modal_close">&times;</span>
+            </div>
+            <div class="resource_modal_body">
+              <div id="resource_modal_content"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- CTA Section -->
@@ -760,15 +773,114 @@
             resources.
           </p>
           <div class="cta-buttons">
-            <a href="#" class="btn btn-primary"
-              ><i class="fas fa-user-plus"></i> Create Your Account</a
-            >
             <a href="#" class="btn btn-secondary"
               ><i class="fas fa-calendar-alt"></i> Book a Consultation</a
             >
-            <a href="#" class="btn btn-secondary"
-              ><i class="fas fa-download"></i> Download Journey Checklist</a
-            >
+          </div>
+        </div>
+        <div id="consultModal" class="consult_modal_container">
+          <div class="consult_modal_wrapper">
+            <div class="consult_modal_header">
+              <h3 class="consult_modal_title">📅 Book a Free Consultation</h3>
+              <span class="consult_modal_close">&times;</span>
+            </div>
+            <div class="consult_modal_body">
+              <form id="consultForm">
+                <div class="consult_form_group">
+                  <label class="consult_label">Your Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="consult_name"
+                    class="consult_input"
+                    placeholder="e.g., Rahim Uddin"
+                    required
+                  />
+                </div>
+                <div class="consult_form_group">
+                  <label class="consult_label">Email Address *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="consult_email"
+                    class="consult_input"
+                    placeholder="rahim@example.com"
+                    required
+                  />
+                </div>
+                <div class="consult_form_group">
+                  <label class="consult_label">Phone Number *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="consult_phone"
+                    class="consult_input"
+                    placeholder="+880 1XXX XXXXXX"
+                    required
+                  />
+                </div>
+                <div class="consult_form_group">
+                  <label class="consult_label">Preferred Country *</label>
+                  <select
+                    name="country"
+                    id="consult_country"
+                    class="consult_input"
+                    required
+                  >
+                    <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                  </select>
+                </div>
+                <div class="consult_form_group">
+                  <label class="consult_label">Preferred Date *</label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="consult_date"
+                    class="consult_input"
+                    required
+                  />
+                </div>
+                <div class="consult_form_group">
+                  <label class="consult_label">Preferred Time *</label>
+                  <select
+                    name="time"
+                    id="consult_time"
+                    class="consult_input"
+                    required
+                  >
+                    <option value="">Select Time</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                  </select>
+                </div>
+                <div class="consult_form_group">
+                  <label class="consult_label">Your Message (Optional)</label>
+                  <textarea
+                    name="message"
+                    id="consult_message"
+                    class="consult_textarea"
+                    rows="3"
+                    placeholder="Any specific questions or requirements..."
+                  ></textarea>
+                </div>
+                <div class="consult_form_group">
+                  <button type="submit" class="consult_submit_btn">
+                    📅 Request Consultation
+                  </button>
+                </div>
+                <div id="consult_status" class="consult_status"></div>
+              </form>
+            </div>
           </div>
         </div>
       </section>

@@ -28,12 +28,14 @@
                   <li class="menu-bars">
                     <a href="#" id="open-close--menu"
                       ><i class="fa-solid fa-bars-staggered"></i
-                      ><span class="d-none">Bars</span></a>
+                      ><span class="d-none">Bars</span></a
+                    >
                   </li>
                   <li>
                     <a href="#"
                       ><i class="fa-solid fa-magnifying-glass"></i
-                      ><span class="d-none">Search</span></a>
+                      ><span class="d-none">Search</span></a
+                    >
                   </li>
                   <li>
                     <ul class="all-site--modes">
@@ -44,7 +46,8 @@
                       </li>
                       <li>
                         <a title="dark mode" href="#"
-                          ><i class="fa-regular fa-moon"></i></a>
+                          ><i class="fa-regular fa-moon"></i
+                        ></a>
                       </li>
                       <li>
                         <a title="calm mode" href="#"
@@ -84,14 +87,6 @@
         </div>
       </header>
 
-
-
-
-
-
-
-
-      
       <!-- Contact Section -->
       <section class="contact-section">
         <div class="container">
@@ -124,14 +119,14 @@
                       <i class="fas fa-envelope"></i>
                       <div>
                         <strong>Email:</strong><br />
-                        info@studenthub.com
+                        khadizamaria523@gmail.com
                       </div>
                     </li>
                     <li>
                       <i class="fas fa-phone"></i>
                       <div>
                         <strong>Phone:</strong><br />
-                        +1 (555) 123-4567
+                        +880 1795436073
                       </div>
                     </li>
                     <li>
@@ -163,8 +158,10 @@
                     <li>
                       <i class="fas fa-envelope"></i>
                       <div>
-                        <strong>Email:</strong><br />
-                        admissions@studenthub.com
+                        <a href="mailto:khadizamaria523@gmail.com">
+                          <strong>Email:</strong><br />
+                          khadizamaria523@gmail.com
+                        </a>
                       </div>
                     </li>
                     <li>
@@ -172,7 +169,7 @@
                       <div>
                         <strong>Book Consultation:</strong><br />
                         <a
-                          href="#"
+                          href="tel: 01795436073"
                           style="color: var(--primary); text-decoration: none"
                         >
                           Schedule a Call
@@ -232,7 +229,11 @@
                 </p>
               </div>
 
-              <form id="contactForm">
+              <form
+                id="contactForm"
+                action="https://formsubmit.co/khadizamaria523@gmail.com"
+                method="POST"
+              >
                 <div class="form-row">
                   <div class="form-group">
                     <label for="firstName"
@@ -241,6 +242,7 @@
                     <input
                       type="text"
                       id="firstName"
+                      name="f_name"
                       class="form-control"
                       required
                     />
@@ -252,6 +254,7 @@
                     <input
                       type="text"
                       id="lastName"
+                      name="l_name"
                       class="form-control"
                       required
                     />
@@ -265,6 +268,7 @@
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     class="form-control"
                     required
                   />
@@ -272,7 +276,12 @@
 
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" class="form-control" />
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    class="form-control"
+                  />
                 </div>
 
                 <div class="form-group">
@@ -281,6 +290,7 @@
                   >
                   <select
                     id="country"
+                    name="country"
                     class="form-control form-select"
                     required
                   >
@@ -305,6 +315,7 @@
                   >
                   <select
                     id="inquiryType"
+                    name="inquiry"
                     class="form-control form-select"
                     required
                   >
@@ -325,6 +336,7 @@
                   <textarea
                     id="message"
                     class="form-control"
+                    name="message"
                     required
                   ></textarea>
                 </div>

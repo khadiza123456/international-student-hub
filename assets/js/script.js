@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
            // Search functionality
           const searchInput = document.querySelector(".search-box-country input");
           const searchBtn = document.querySelector(".search-btn");
-          const tags = document.querySelectorAll(".tag");
+          const tags = document.querySelectorAll(".search-tags .tag");
           const countryCards = document.querySelectorAll(".country-card-guide");
 
           // Tag click functionality
@@ -127,7 +127,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
           // Filter countries function
           function filterCountries(searchTerm) {
-            const term = searchTerm.toLowerCase().trim();
+            // const term = searchTerm.toLowerCase().trim();
+
+            let term = searchTerm.toLowerCase().trim();
+    
+   
+            if(term === 'usa') term = 'united states';
+            if(term === 'uk') term = 'united kingdom';
 
             countryCards.forEach((card) => {
               const countryName = card
@@ -609,12 +615,12 @@ function showCountryGuideModal(country) {
 }
 
 // Close modal function
-function closeModal() {
-    const modal = document.querySelector('.country-modal');
-    if (modal) {
-        modal.style.animation = 'fadeOut 0.3s ease';
+function ccloseModal() {
+    const cmodal = document.querySelector('.country-modal');
+    if (cmodal) {
+        cmodal.style.animation = 'fadeOut 0.3s ease';
         setTimeout(() => {
-            modal.remove();
+            cmodal.remove();
             document.body.style.overflow = 'auto';
         }, 300);
     }
@@ -648,20 +654,20 @@ window.viewCountryGuide = function(country) {
     }
 };
 
-window.closeModal = closeModal;
+window.closeModal = ccloseModal;
 window.downloadGuide = downloadGuide;
 
 // Close modal on ESC key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeModal();
+        ccloseModal();
     }
 });
 
 // Close modal on background click
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('country-modal')) {
-        closeModal();
+        ccloseModal();
     }
 });
 
@@ -1050,7 +1056,558 @@ const ThemeManager = {
 };
 
     ThemeManager.init();
+
+
+
+    const ctaButton = document.querySelector('.cta-button-m');
+    const modal = document.getElementById('exp_share_modal');
+    const closeBtn = document.querySelector('.exp_modal_close_btn');
+    const form = document.getElementById('exp_share_form');
+    const statusDiv = document.getElementById('exp_form_status');
     
+    if(ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        statusDiv.style.display = 'none';
+        form.reset();
+    }
+    
+    if(closeBtn) {
+        closeBtn.onclick = closeModal;
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+    
+    if(form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('exp_name').value;
+            const email = document.getElementById('exp_email').value;
+            const country = document.getElementById('exp_country').value;
+            const message = document.getElementById('exp_message').value;
+            
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('country', country);
+            formData.append('message', message);
+            
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'exp_form_status';
+            statusDiv.innerHTML = '📧 Sending your experience...';
+            statusDiv.style.backgroundColor = '#e3f2fd';
+            statusDiv.style.color = '#0d47a1';
+            
+            try {
+                
+                const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData  
+                });
+                
+                const result = await response.json();
+                
+                if (result.success === true) {
+                    statusDiv.className = 'exp_form_status success';
+                    statusDiv.innerHTML = '✅ Thank you! Your experience has been sent successfully! We will get back to you soon.';
+                    form.reset();
+                    
+                    setTimeout(closeModal, 3000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                statusDiv.className = 'exp_form_status error';
+                statusDiv.innerHTML = '❌ Sorry! Failed to send. Please try again later.';
+            }
+        });
+    }
+
+    
+    // সমস্ত resource লিঙ্ক নির্বাচন করুন
+    const allResourceLinks = document.querySelectorAll('.resource-links a');
+    const resourceModalBox = document.getElementById('resource_content_modal');
+    const modalTitle = document.getElementById('resource_modal_title');
+    const modalContent = document.getElementById('resource_modal_content');
+    const resourceCloseButton = document.querySelector('.resource_modal_close');
+    
+    // প্রতিটি লিঙ্কের জন্য কন্টেন্ট ডাটাবেস
+    const resourceContent = {
+        // Financial Planning
+        'Scholarship Finder Tool': {
+            title: '🎓 Scholarship Finder Tool',
+            description: 'Find scholarships that match your profile and destination country.',
+            details: 'This tool helps you discover thousands of international scholarships based on your academic background, country preference, and field of study.',
+            features: [
+                'Personalized scholarship recommendations',
+                'Application deadline alerts',
+                'Eligibility checker',
+                'Success rate calculator'
+            ],
+            externalLink: 'https://www.scholars4dev.com',
+            actionText: 'Search Scholarships'
+        },
+        'Cost of Living Calculator': {
+            title: '💰 Cost of Living Calculator',
+            description: 'Calculate your monthly expenses in different countries.',
+            details: 'Compare living costs including accommodation, food, transportation, healthcare, and entertainment across major study destinations.',
+            features: [
+                'City-wise comparison',
+                'Student budget templates',
+                'Part-time work income estimator',
+                'Currency converter'
+            ],
+            externalLink: 'https://www.numbeo.com/cost-of-living/',
+            actionText: 'Calculate Now'
+        },
+        'Student Loan Guide': {
+            title: '📘 Student Loan Guide',
+            description: 'Complete guide to education loans for international students.',
+            details: 'Learn about different loan options, interest rates, repayment plans, and eligibility criteria for studying abroad.',
+            features: [
+                'Government vs private loans',
+                'Interest rate comparison',
+                'Loan application process',
+                'Repayment strategies'
+            ],
+            externalLink: 'https://www.internationalstudentloan.com/',
+            actionText: 'Explore Loans'
+        },
+        'Part-time Work Regulations': {
+            title: '💼 Part-time Work Regulations',
+            description: 'Know your rights and limitations for working while studying.',
+            details: 'Country-wise guide to work permits, hour limits, minimum wages, and tax regulations for international students.',
+            features: [
+                'Country-specific work hour limits',
+                'Tax filing guides',
+                'Work permit application',
+                'Rights and protections'
+            ],
+            externalLink: 'https://www.internationalstudents.org/work-regulations',
+            actionText: 'View Regulations'
+        },
+        
+        // Application Tools
+        'Personal Statement Builder': {
+            title: '✍️ Personal Statement Builder',
+            description: 'Create compelling personal statements with AI assistance.',
+            details: 'Step-by-step guide to write impressive personal statements that stand out to admission committees.',
+            features: [
+                'Template library',
+                'Success examples',
+                'AI writing assistant',
+                'Peer review system'
+            ],
+            externalLink: 'https://www.studyingabroad.com/ps-builder',
+            actionText: 'Start Building'
+        },
+        'Document Checklist': {
+            title: '📋 Document Checklist',
+            description: 'Complete checklist of required documents for applications.',
+            details: 'Track all necessary documents for university applications, visa processing, and pre-departure preparations.',
+            features: [
+                'Country-wise requirements',
+                'Downloadable PDF checklist',
+                'Document expiry alerts',
+                'Notarization guide'
+            ],
+            externalLink: 'https://www.documentchecklist.com/studyabroad',
+            actionText: 'Get Checklist'
+        },
+        'University Comparison Tool': {
+            title: '🏛️ University Comparison Tool',
+            description: 'Compare universities based on rankings, fees, and more.',
+            details: 'Side-by-side comparison of universities based on QS rankings, tuition fees, acceptance rates, and student reviews.',
+            features: [
+                'Ranking comparison',
+                'Fee structure analysis',
+                'Acceptance rates',
+                'Alumni reviews'
+            ],
+            externalLink: 'https://www.topuniversities.com/university-rankings',
+            actionText: 'Compare Now'
+        },
+        'Deadline Tracker': {
+            title: '⏰ Deadline Tracker',
+            description: 'Never miss an application deadline again.',
+            details: 'Personalized deadline calendar for university applications, scholarship deadlines, and visa appointments.',
+            features: [
+                'Custom reminders',
+                'Email notifications',
+                'Calendar integration',
+                'Priority sorting'
+            ],
+            externalLink: 'https://www.deadlinetracker.com/student',
+            actionText: 'Set Reminders'
+        },
+        
+        // Community Support
+        'Country-Specific Student Forums': {
+            title: '🌍 Country-Specific Student Forums',
+            description: 'Connect with students in your destination country.',
+            details: 'Join country-wise forums to get insider tips, local guidance, and peer support from current international students.',
+            features: [
+                'Country-wise communities',
+                'City-specific groups',
+                'Real-time chat',
+                'Expert Q&A sessions'
+            ],
+            externalLink: 'https://www.studentforums.net',
+            actionText: 'Join Forum'
+        },
+        'Connect with Current Students': {
+            title: '🤝 Connect with Current Students',
+            description: 'Direct mentorship from students studying abroad.',
+            details: 'Platform to connect with current international students who share their real experiences and advice.',
+            features: [
+                'One-on-one chat',
+                'Video calls',
+                'Success stories',
+                'Ask anything sessions'
+            ],
+            externalLink: 'https://www.connectwithstudents.com',
+            actionText: 'Find Mentors'
+        },
+        'Alumni Mentorship Program': {
+            title: '🎓 Alumni Mentorship Program',
+            description: 'Learn from successful alumni who completed their studies.',
+            details: 'Get guidance from alumni about career paths, job opportunities, and life after graduation.',
+            features: [
+                'Career guidance',
+                'Resume reviews',
+                'Job referrals',
+                'Networking events'
+            ],
+            externalLink: 'https://www.alumnimentorship.org',
+            actionText: 'Join Program'
+        },
+        'Cultural Adaptation Workshops': {
+            title: '🌏 Cultural Adaptation Workshops',
+            description: 'Prepare for cultural differences and new environments.',
+            details: 'Interactive workshops to help you adapt to new cultures, overcome homesickness, and build cross-cultural communication skills.',
+            features: [
+                'Free webinars',
+                'Cultural sensitivity training',
+                'Local customs guide',
+                'Language tips'
+            ],
+            externalLink: 'https://www.culturaladaptation.com/students',
+            actionText: 'Register Now'
+        },
+       // Health & Wellness
+        'Mental Health Resources': {
+            title: '🧠 Mental Health Resources',
+            description: 'Support for your mental wellbeing',
+            details: 'Free and confidential mental health support for international students. Access counseling services, stress management tools, and 24/7 crisis helplines.',
+            features: [
+                'Free counseling services',
+                'Stress management guides',
+                'Anxiety coping strategies',
+                '24/7 crisis helplines',
+                'Student support groups'
+            ],
+            externalLink: 'https://www.internationalstudentwellness.com',
+            actionText: 'Get Support'
+        },
+        'International Insurance Guide': {
+            title: '🏥 International Insurance Guide',
+            description: 'Complete health insurance guide',
+            details: 'Understand health insurance requirements, coverage options, claims process, and how to choose the best plan for your needs as an international student.',
+            features: [
+                'Insurance requirement by country',
+                'Coverage comparison',
+                'Claims process guide',
+                'Emergency medical tips',
+                'Cost saving strategies'
+            ],
+            externalLink: 'https://www.internationalstudentinsurance.com/guide',
+            actionText: 'Compare Insurance'
+        },
+        'Finding Healthcare Abroad': {
+            title: '🩺 Finding Healthcare Abroad',
+            description: 'Access medical care in your host country',
+            details: 'How to find doctors, hospitals, pharmacies, and emergency services in your destination country. Learn about appointment systems and medical vocabulary.',
+            features: [
+                'Finding local doctors',
+                'Hospital directories',
+                'Pharmacy guide',
+                'Emergency numbers',
+                'Medical appointment tips'
+            ],
+            externalLink: 'https://www.healthcareabroad.com/students',
+            actionText: 'Find Healthcare'
+        },
+        'Wellness Check-ins': {
+            title: '💚 Wellness Check-ins',
+            description: 'Regular wellness monitoring',
+            details: 'Regular wellness reminders and self-assessment tools to maintain your physical and mental health while studying abroad. Track your wellbeing journey.',
+            features: [
+                'Daily wellness reminders',
+                'Self-assessment tools',
+                'Mood tracking',
+                'Healthy habit builder',
+                'Wellness tips newsletter'
+            ],
+            externalLink: 'https://www.studentwellnesscheck.org',
+            actionText: 'Start Check-in'
+        },
+        
+        // Community Support
+        'Student Forum Access': {
+            title: '💬 Student Forum Access',
+            description: 'Connect with fellow students',
+            details: 'Join global student forums to ask questions, share experiences, get advice, and build friendships with international students from around the world.',
+            features: [
+                'Country-wise communities',
+                'University-specific groups',
+                'Real-time discussions',
+                'Expert Q&A sessions',
+                'Event announcements'
+            ],
+            externalLink: 'https://www.studentforums.net',
+            actionText: 'Join Forum'
+        },
+        'Cultural Buddy Program': {
+            title: '👥 Cultural Buddy Program',
+            description: 'Get paired with a local buddy',
+            details: 'Get matched with a local or international buddy who will help you adapt to new culture, practice language, navigate daily life, and build meaningful connections.',
+            features: [
+                'One-on-one buddy matching',
+                'Cultural exchange activities',
+                'Language practice partners',
+                'Local tips and guides',
+                'Monthly meetups'
+            ],
+            externalLink: 'https://www.culturalbuddy.com',
+            actionText: 'Find a Buddy'
+        },
+        'Alumni Network': {
+            title: '🎓 Alumni Network',
+            description: 'Connect with successful graduates',
+            details: 'Join our global alumni network. Find mentors, discover career opportunities, attend networking events, and stay connected with your study abroad community.',
+            features: [
+                'Global alumni directory',
+                'Mentorship opportunities',
+                'Job board access',
+                'Networking events',
+                'Success stories'
+            ],
+            externalLink: 'https://www.alumninetwork.com',
+            actionText: 'Join Network'
+        },
+        'Emergency Contacts Database': {
+            title: '🚨 Emergency Contacts Database',
+            description: 'Essential emergency information',
+            details: 'Access essential emergency numbers, embassy contacts, police stations, hospitals, and safety resources for international students in different countries.',
+            features: [
+                'Emergency numbers by country',
+                'Embassy contact list',
+                'Safety tips and guides',
+                '24/7 helplines',
+                'Travel advisory updates'
+            ],
+            externalLink: 'https://www.emergencycontacts.com/students',
+            actionText: 'View Contacts'
+        }
+    };
+    
+    // প্রতিটি লিঙ্কে ক্লিক ইভেন্ট যোগ করুন
+    allResourceLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // লিংকের টেক্সট নিন (যা দেখানো হচ্ছে)
+            let linkText = this.innerText.trim();
+            // আইকন বাদ দিতে
+            linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
+            // "Tool", "Guide" ইত্যাদি থাকলে সেটা রাখবে
+            
+            // ডাটা খুঁজুন
+            let content = null;
+            for (let key in resourceContent) {
+                if (linkText.includes(key) || key.includes(linkText)) {
+                    content = resourceContent[key];
+                    break;
+                }
+            }
+            
+            // যদি না পাওয়া যায়, ডিফল্ট কন্টেন্ট দেখান
+            if (!content) {
+                content = {
+                    title: linkText,
+                    description: 'Resource guide for study abroad students.',
+                    details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
+                    features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
+                    externalLink: '#',
+                    actionText: 'Learn More'
+                };
+            }
+            
+            // মডালে কন্টেন্ট দেখান
+            modalTitle.innerHTML = content.title;
+            modalContent.innerHTML = `
+                <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
+                <p>${content.details}</p>
+                
+                <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px";>✨ Key Features:</h4>
+                <ul style="margin-bottom: 40px;">
+                    ${content.features.map(f => `<li style="margin-bottom: 18px;font-size: 18px;">✓ ${f}</li>`).join('')}
+                </ul>
+                
+                <div class="resource_action_buttons">
+                    <a href="${content.externalLink}" target="_blank" class="resource_btn resource_btn_primary">
+                        ${content.actionText} 🔗
+                    </a>
+                    <button onclick="window.print()" class="resource_btn resource_btn_secondary">
+                        📄 Save as PDF
+                    </button>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 12px; color: #999;">
+                    ⚡ You will be redirected to an external resource. All tools are free to use.
+                </p>
+            `;
+            
+            // মডাল দেখান
+            resourceModalBox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // মডাল বন্ধ করার ফাংশন
+    if(resourceCloseButton) {
+        resourceCloseButton.onclick = function() {
+            resourceModalBox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+    }
+    
+    // মডালের বাইরে ক্লিক করলে বন্ধ
+    window.onclick = function(event) {
+        if (event.target == resourceModalBox) {
+            resourceModalBox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    
+     // বাটন নির্বাচন
+    const consultBtn = document.querySelector('.btn-secondary');
+    const consultModal = document.getElementById('consultModal');
+    const consultCloseBtn = document.querySelector('.consult_modal_close');
+    const consultForm = document.getElementById('consultForm');
+    const consultStatus = document.getElementById('consult_status');
+    
+    // মডাল খোলা
+    if(consultBtn) {
+        consultBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            consultModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // আজকের তারিখ থেকে শুরু (অতীত তারিখ সিলেক্ট করা যাবে না)
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('consult_date').min = today;
+        });
+    }
+    
+    // মডাল বন্ধ
+    function closeConsultModal() {
+        consultModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        consultStatus.style.display = 'none';
+        if(consultForm) consultForm.reset();
+    }
+    
+    if(consultCloseBtn) {
+        consultCloseBtn.onclick = closeConsultModal;
+    }
+    
+    window.onclick = function(event) {
+        if(event.target === consultModal) {
+            closeConsultModal();
+        }
+    }
+    
+    // ফর্ম সাবমিট - FormSubmit এ পাঠানো
+    if(consultForm) {
+        consultForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // ফর্ম ডাটা সংগ্রহ
+            const name = document.getElementById('consult_name').value;
+            const email = document.getElementById('consult_email').value;
+            const phone = document.getElementById('consult_phone').value;
+            const country = document.getElementById('consult_country').value;
+            const date = document.getElementById('consult_date').value;
+            const time = document.getElementById('consult_time').value;
+            const message = document.getElementById('consult_message').value;
+            
+            // FormData তৈরি
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('country', country);
+            formData.append('date', date);
+            formData.append('time', time);
+            formData.append('message', message);
+            formData.append('_subject', 'New Consultation Request from ' + name);
+            
+            // স্ট্যাটাস দেখানো
+            consultStatus.style.display = 'block';
+            consultStatus.className = 'consult_status';
+            consultStatus.innerHTML = '⏳ Sending your request...';
+            consultStatus.style.backgroundColor = '#e3f2fd';
+            consultStatus.style.color = '#0d47a1';
+            
+            try {
+                // FormSubmit এ পাঠানো (আপনার ইমেইল দিন)
+                const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if(result.success === true) {
+                    consultStatus.className = 'consult_status success';
+                    consultStatus.innerHTML = '✅ Thank you! We will contact you within 24 hours to confirm your consultation.';
+                    consultForm.reset();
+                    
+                    setTimeout(closeConsultModal, 4000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+                
+            } catch(error) {
+                consultStatus.className = 'consult_status error';
+                consultStatus.innerHTML = '❌ Sorry! Failed to send. Please try again or email us directly.';
+            }
+        });
+    }
+
 
 });
 

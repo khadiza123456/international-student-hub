@@ -185,8 +185,8 @@
               </div>
               <h3>Cultural Adaptation</h3>
               <p>
-                Embrace new cultures,overcome homesickness, and build
-                meaningful connections
+                Embrace new cultures,overcome homesickness, and build meaningful
+                connections
               </p>
               <ul class="category-features">
                 <li><i class="fas fa-check"></i> Overcoming culture shock</li>
@@ -459,6 +459,19 @@
             </div>
           </div>
         </div>
+        <div id="resource_content_modal" class="resource_modal_container">
+          <div class="resource_modal_wrapper">
+            <div class="resource_modal_header">
+              <h3 id="resource_modal_title" class="resource_modal_title">
+                Resource Details
+              </h3>
+              <span class="resource_modal_close">&times;</span>
+            </div>
+            <div class="resource_modal_body">
+              <div id="resource_modal_content"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Essential Tips -->
@@ -550,12 +563,79 @@
             experiences, ask questions, and find support from peers who
             understand your journey.
           </p>
-          <a href="#" class="btn-ex">
-            <i class="fas fa-user-plus"></i> Join Student Forum
-          </a>
-          <a href="#" class="btn-ex btn-outline">
+          <a href="#" class="btn-ex btn-outline cta-button-m">
             <i class="fas fa-pen-alt"></i> Share Your Experience
           </a>
+        </div>
+        <div id="exp_share_modal" class="exp_modal_container">
+          <div class="exp_modal_wrapper">
+            <div class="exp_modal_header">
+              <h3 class="exp_modal_title">
+                📝 Share Your Study Abroad Experience
+              </h3>
+              <span class="exp_modal_close_btn">&times;</span>
+            </div>
+            <div class="exp_modal_body">
+              <!-- এখানে action দেওয়া লাগবে না, JS handle করবে -->
+              <form id="exp_share_form">
+                <div class="exp_form_group">
+                  <label class="exp_label">Your Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="exp_name"
+                    class="exp_input"
+                    placeholder="e.g., Rahim Uddin"
+                    required
+                  />
+                </div>
+                <div class="exp_form_group">
+                  <label class="exp_label">Your Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="exp_email"
+                    class="exp_input"
+                    placeholder="rahim@example.com"
+                    required
+                  />
+                </div>
+                <div class="exp_form_group">
+                  <label class="exp_label">Destination Country *</label>
+                  <select
+                    name="country"
+                    id="exp_country"
+                    class="exp_input"
+                    required
+                  >
+                    <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                  </select>
+                </div>
+                <div class="exp_form_group">
+                  <label class="exp_label">Your Experience *</label>
+                  <textarea
+                    name="message"
+                    id="exp_message"
+                    class="exp_textarea"
+                    rows="4"
+                    placeholder="Share your journey, challenges, achievements, tips for others..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="exp_form_group">
+                  <button type="submit" class="exp_submit_btn">
+                    📧 Send Experience
+                  </button>
+                </div>
+                <div id="exp_form_status" class="exp_form_status"></div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
 
