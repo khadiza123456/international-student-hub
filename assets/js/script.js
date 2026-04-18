@@ -1407,87 +1407,93 @@ const ThemeManager = {
                 
                 
     
-    allResourceLinks.forEach(link => {
+    
+
+allResourceLinks.forEach(link => {
 link.addEventListener('click', function(e) {
 e.preventDefault();
 
-       let linkText = this.innerText.trim();   
-        linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();  
-          
-        let content = null;
-
-// Exact match first
-for (let key in resourceContent) {
-    if (linkText === key) {
-        content = resourceContent[key];
-        break;
-    }
-}
-
-// If not found, try partial match
-if (!content) {
-    for (let key in resourceContent) {
-        if (linkText.includes(key) || key.includes(linkText)) {
-            content = resourceContent[key];
-            break;
+    let linkText = this.innerText.trim();   
+    linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();  
+      
+    let content = null;
+    
+    // Financial Planning Tools Mapping
+    let financialMapping = {
+        'Scholarship': 'Scholarship Finder Tool',
+        'scholarship': 'Scholarship Finder Tool',
+        'Cost of Living': 'Cost of Living Calculator',
+        'cost of living': 'Cost of Living Calculator',
+        'Student Loan': 'Student Loan Guide',
+        'student loan': 'Student Loan Guide',
+        'Loan': 'Student Loan Guide',
+        'Part-time': 'Part-time Work Regulations',
+        'part time': 'Part-time Work Regulations',
+        'Work': 'Part-time Work Regulations'
+    };
+    
+    // Check financial mapping first
+    for (let mapKey in financialMapping) {
+        if (linkText.toLowerCase().includes(mapKey.toLowerCase())) {
+            let matchedResource = financialMapping[mapKey];
+            if (resourceContent[matchedResource]) {
+                content = resourceContent[matchedResource];
+                break;
+            }
         }
     }
-}
-
-// If still not found, check by title property
-if (!content) {
-    for (let key in resourceContent) {
-        let title = resourceContent[key].title;
-        // Remove emoji and special chars for comparison
-        let cleanTitle = title.replace(/[^\w\s]/g, '').trim();
-        let cleanLinkText = linkText.replace(/[^\w\s]/g, '').trim();
-        
-        if (cleanLinkText.includes(cleanTitle) || cleanTitle.includes(cleanLinkText)) {
-            content = resourceContent[key];
-            break;
+    
+    // Original matching logic
+    if (!content) {
+        for (let key in resourceContent) {
+            if (linkText.includes(key) || key.includes(linkText)) {
+                content = resourceContent[key];
+                break;
+            }
         }
     }
-}
+      
+    if (!content) {
+        content = {
+            title: linkText,
+            description: 'Resource guide for study abroad students.',
+            details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
+            features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
+            externalLink: '#',
+            actionText: 'Learn More'
+        };
+    }
+      
+    modalTitle.innerHTML = content.title;
+    modalContent.innerHTML = `
+        <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
+        <p>${content.details}</p>
           
-        if (!content) {
-            content = {
-                title: linkText,
-                description: 'Resource guide for study abroad students.',
-                details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
-                features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
-                externalLink: '#',
-                actionText: 'Learn More'
-            };
-        }
+        <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px";>✨ Key Features:</h4>
+        <ul style="margin-bottom: 40px;">
+            ${content.features.map(f => `<li style="margin-bottom: 18px;font-size: 18px;">✓ ${f}</li>`).join('')}
+        </ul>
           
-        modalTitle.innerHTML = content.title;
-        modalContent.innerHTML = `
-            <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
-            <p>${content.details}</p>
-              
-            <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px";>✨ Key Features:</h4>
-            <ul style="margin-bottom: 40px;">
-                ${content.features.map(f => `<li style="margin-bottom: 18px;font-size: 18px;">✓ ${f}</li>`).join('')}
-            </ul>
-              
-            <div class="resource_action_buttons">
-                <a href="${content.externalLink}" target="_blank" class="resource_btn resource_btn_primary">
-                    ${content.actionText} 🔗
-                </a>
-                <button onclick="window.print()" class="resource_btn resource_btn_secondary">
-                    📄 Save as PDF
-                </button>
-            </div>
-              
-            <p style="margin-top: 20px; font-size: 12px; color: #999;">
-                ⚡ You will be redirected to an external resource. All tools are free to use.
-            </p>
-        `;
+        <div class="resource_action_buttons">
+            <a href="${content.externalLink}" target="_blank" class="resource_btn resource_btn_primary">
+                ${content.actionText} 🔗
+            </a>
+            <button onclick="window.print()" class="resource_btn resource_btn_secondary">
+                📄 Save as PDF
+            </button>
+        </div>
           
-        resourceModalBox.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        <p style="margin-top: 20px; font-size: 12px; color: #999;">
+            ⚡ You will be redirected to an external resource. All tools are free to use.
+        </p>
+    `;
+      
+    resourceModalBox.style.display = 'block';
+    document.body.style.overflow = 'hidden';
     });
 });
+          
+        
 
 
             
