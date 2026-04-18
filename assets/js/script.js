@@ -1447,19 +1447,27 @@ e.preventDefault();
       
     let content = null;
     
-    // Financial Planning Tools Mapping
-    let financialMapping = {
-        'Scholarship': 'Scholarship Finder Tool',
-        'scholarship': 'Scholarship Finder Tool',
-        'Cost of Living': 'Cost of Living Calculator',
-        'cost of living': 'Cost of Living Calculator',
-        'Student Loan': 'Student Loan Guide',
-        'student loan': 'Student Loan Guide',
-        'Loan': 'Student Loan Guide',
-        'Part-time': 'Part-time Work Regulations',
-        'part time': 'Part-time Work Regulations',
-        'Work': 'Part-time Work Regulations'
-    };
+    let financialPlanningTools = {
+    'Scholarship': 'Scholarship Finder Tool',
+    'scholarship': 'Scholarship Finder Tool',
+    'Cost of Living': 'Cost of Living Calculator',
+    'cost of living': 'Cost of Living Calculator',
+    'Student Loan': 'Student Loan Guide',
+    'student loan': 'Student Loan Guide',
+    'Loan': 'Student Loan Guide',
+    'Part-time': 'Part-time Work Regulations',
+    'part time': 'Part-time Work Regulations',
+    'Work': 'Part-time Work Regulations',
+    
+  
+    'Budget': 'Budget Calculator Tool',
+    'budget': 'Budget Calculator Tool',
+    'Calculator': 'Budget Calculator Tool',
+    'Banking': 'International Banking Tips',
+    'banking': 'International Banking Tips',
+    'International Banking': 'International Banking Tips',
+    'international banking': 'International Banking Tips'
+};
     
     // Check financial mapping first
     for (let mapKey in financialMapping) {
