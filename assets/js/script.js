@@ -1415,10 +1415,10 @@ const ThemeManager = {
             let linkText = this.innerText.trim();
             
             linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
-            
-            
-           
-            let content = null;
+
+            let content = resourceContent[linkText] || null;
+
+          
             for (let key in resourceContent) {
                 if (linkText.includes(key) || key.includes(linkText)) {
                     content = resourceContent[key];
