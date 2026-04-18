@@ -1412,9 +1412,10 @@ const ThemeManager = {
             if (this.closest('.resource_action_buttons')) return;
             e.preventDefault();
                 let linkText = this.innerText
-    .replace(/^[^\w]+/, '')
+    .replace(/[^\w\s]/g, '')
     .replace(/\s+/g, ' ')
-    .trim();                
+    .trim()
+    .toLowerCase();                
             
             linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
 
