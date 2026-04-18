@@ -1411,15 +1411,17 @@ const ThemeManager = {
         link.addEventListener('click', function(e) {
             if (this.closest('.resource_action_buttons')) return;
             e.preventDefault();
-                let linkText = this.innerText
-    .replace(/[^\w\s]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toLowerCase();                
-            
-            linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
 
-            let content = resourceContent[linkText] || null;
+          let linkText = this.innerText.trim();
+
+// CLEAN TEXT
+linkText = linkText.replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+
+// 🔥 SMART MATCH (BEST FIX)
+let content = Object.entries(resourceContent).find(([key]) =>
+    key.toLowerCase().replace(/[^\w\s]/g, '').trim() ===
+    linkText.toLowerCase()
+)?.[1] || null;
 
           
             for (let key in resourceContent) {
