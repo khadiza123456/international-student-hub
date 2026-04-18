@@ -1433,7 +1433,7 @@ const ThemeManager = {
                     description: 'Resource guide for study abroad students.',
                     details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
                     features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
-                    externalLink: '#',
+                    externalLink: 'https://www.google.com',
                     actionText: 'Learn More'
                 };
             }
