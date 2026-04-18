@@ -1436,52 +1436,66 @@ const ThemeManager = {
                 
                 
     
-    
-
+      
+    // আপনার বিদ্যমান সব কোড ডিলিট করে এই কোডটি ব্যবহার করুন
 allResourceLinks.forEach(link => {
 link.addEventListener('click', function(e) {
 e.preventDefault();
 
-    let linkText = this.innerText.trim();   
+    let linkText = this.innerText.trim();
     linkText = linkText.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
-      
+    
     let content = null;
     
-    let financialPlanningTools = {
-    'Scholarship': 'Scholarship Finder Tool',
-    'scholarship': 'Scholarship Finder Tool',
-    'Cost of Living': 'Cost of Living Calculator',
-    'cost of living': 'Cost of Living Calculator',
-    'Student Loan': 'Student Loan Guide',
-    'student loan': 'Student Loan Guide',
-    'Loan': 'Student Loan Guide',
-    'Part-time': 'Part-time Work Regulations',
-    'part time': 'Part-time Work Regulations',
-    'Work': 'Part-time Work Regulations',
-    
-  
-    'Budget': 'Budget Calculator Tool',
-    'budget': 'Budget Calculator Tool',
-    'Calculator': 'Budget Calculator Tool',
-    'Banking': 'International Banking Tips',
-    'banking': 'International Banking Tips',
-    'International Banking': 'International Banking Tips',
-    'international banking': 'International Banking Tips'
-};
-    
-    // Check financial mapping first
-    for (let mapKey in financialMapping) {
-        if (linkText.toLowerCase().includes(mapKey.toLowerCase())) {
-            let matchedResource = financialMapping[mapKey];
-            if (resourceContent[matchedResource]) {
-                content = resourceContent[matchedResource];
-                break;
-            }
-        }
+    // Budget Calculator Tool - সরাসরি চেক
+    if(linkText.includes('Budget') || linkText.includes('budget')) {
+        content = {
+            title: '💰 Budget Calculator Tool',
+            description: 'Plan your monthly budget effectively',
+            details: 'Interactive budget planning tool to track your income, expenses, and savings while studying abroad.',
+            features: ['Monthly expense tracker', 'Income vs expense analysis', 'Saving goals calculator', 'PDF budget report', 'Spending alerts'],
+            externalLink: 'https://www.budgetcalculator.com/students',
+            actionText: 'Calculate Budget'
+        };
     }
-    
-    // Original matching logic
-    if (!content) {
+    // International Banking Tips - সরাসরি চেক
+    else if(linkText.includes('Banking') || linkText.includes('banking')) {
+        content = {
+            title: '🏦 International Banking Tips',
+            description: 'Smart banking solutions for international students',
+            details: 'Complete guide to opening bank accounts, transferring money internationally, and avoiding fees.',
+            features: ['Bank account opening guide', 'International transfer comparison', 'Fee avoidance strategies', 'Credit building tips', 'Currency exchange guide'],
+            externalLink: 'https://www.internationalbanking.com/students',
+            actionText: 'Get Banking Tips'
+        };
+    }
+    // আপনার existing financial planning tools check
+    else if(linkText.includes('Scholarship')) {
+        content = resourceContent['Scholarship Finder Tool'];
+    }
+    else if(linkText.includes('Cost') || linkText.includes('Living')) {
+        content = resourceContent['Cost of Living Calculator'];
+    }
+    else if(linkText.includes('Loan')) {
+        content = resourceContent['Student Loan Guide'];
+    }
+    else if(linkText.includes('Part-time') || linkText.includes('Work')) {
+        content = resourceContent['Part-time Work Regulations'];
+    }
+    else if(linkText.includes('Personal')) {
+        content = resourceContent['Personal Statement Builder'];
+    }
+    else if(linkText.includes('Document')) {
+        content = resourceContent['Document Checklist'];
+    }
+    else if(linkText.includes('University')) {
+        content = resourceContent['University Comparison Tool'];
+    }
+    else if(linkText.includes('Deadline')) {
+        content = resourceContent['Deadline Tracker'];
+    }
+    // অন্য সব কিছুর জন্য
+    else {
         for (let key in resourceContent) {
             if (linkText.includes(key) || key.includes(linkText)) {
                 content = resourceContent[key];
@@ -1489,28 +1503,28 @@ e.preventDefault();
             }
         }
     }
-      
+    
+    // যদি এখনো content না পাওয়া যায়
     if (!content) {
         content = {
             title: linkText,
             description: 'Resource guide for study abroad students.',
-            details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
+            details: 'This resource will help you with your study abroad journey.',
             features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
             externalLink: '#',
             actionText: 'Learn More'
         };
     }
-      
+    
+    // মডাল দেখানো
     modalTitle.innerHTML = content.title;
     modalContent.innerHTML = `
         <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
         <p>${content.details}</p>
-          
-        <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px";>✨ Key Features:</h4>
+        <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px;">✨ Key Features:</h4>
         <ul style="margin-bottom: 40px;">
             ${content.features.map(f => `<li style="margin-bottom: 18px;font-size: 18px;">✓ ${f}</li>`).join('')}
         </ul>
-          
         <div class="resource_action_buttons">
             <a href="${content.externalLink}" target="_blank" class="resource_btn resource_btn_primary">
                 ${content.actionText} 🔗
@@ -1519,15 +1533,14 @@ e.preventDefault();
                 📄 Save as PDF
             </button>
         </div>
-          
         <p style="margin-top: 20px; font-size: 12px; color: #999;">
             ⚡ You will be redirected to an external resource. All tools are free to use.
         </p>
     `;
-      
+    
     resourceModalBox.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    });
+});
 });
           
         
