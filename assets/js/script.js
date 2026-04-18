@@ -1417,19 +1417,40 @@ const ThemeManager = {
 // CLEAN TEXT
 linkText = linkText.replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
 
-// 🔥 SMART MATCH (BEST FIX)
-let content = Object.entries(resourceContent).find(([key]) =>
-    key.toLowerCase().replace(/[^\w\s]/g, '').trim() ===
-    linkText.toLowerCase()
-)?.[1] || null;
+let content = null;
 
-          
-            for (let key in resourceContent) {
-                if (linkText.includes(key) || key.includes(linkText)) {
-                    content = resourceContent[key];
-                    break;
-                }
-            }
+// Exact match first
+for (let key in resourceContent) {
+    if (linkText === key) {
+        content = resourceContent[key];
+        break;
+    }
+}
+
+// If not found, try partial match
+if (!content) {
+    for (let key in resourceContent) {
+        if (linkText.includes(key) || key.includes(linkText)) {
+            content = resourceContent[key];
+            break;
+        }
+    }
+}
+
+// If still not found, check by title property
+if (!content) {
+    for (let key in resourceContent) {
+        let title = resourceContent[key].title;
+        // Remove emoji and icon from title for comparison
+        let cleanTitle = title.replace(/[^\w\s]/g, '').trim();
+        let cleanLinkText = linkText.replace(/[^\w\s]/g, '').trim();
+        
+        if (cleanLinkText.includes(cleanTitle) || cleanTitle.includes(cleanLinkText)) {
+            content = resourceContent[key];
+            break;
+        }
+    }
+}
             
            
             if (!content) {
