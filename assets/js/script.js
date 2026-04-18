@@ -1414,7 +1414,7 @@ link.addEventListener('click', function(e) {
 e.preventDefault();
 
     let linkText = this.innerText.trim();   
-    linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();  
+    linkText = linkText.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
       
     let content = null;
     
