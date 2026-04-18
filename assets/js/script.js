@@ -1401,7 +1401,36 @@ const ThemeManager = {
         ],
         externalLink: 'https://www.iamat.org',
         actionText: 'View Contacts'
-    }
+    },
+      'Budget Calculator Tool': {
+    title: '💰 Budget Calculator Tool',
+    description: 'Plan your monthly budget effectively',
+    details: 'Interactive budget planning tool to track your income, expenses, and savings while studying abroad. Set financial goals and get personalized saving tips.',
+    features: [
+        'Monthly expense tracker',
+        'Income vs expense analysis',
+        'Saving goals calculator',
+        'PDF budget report',
+        'Spending alerts'
+    ],
+    externalLink: 'https://www.budgetcalculator.com/students',
+    actionText: 'Calculate Budget'
+},
+
+'International Banking Tips': {
+    title: '🏦 International Banking Tips',
+    description: 'Smart banking solutions for international students',
+    details: 'Complete guide to opening bank accounts, transferring money internationally, avoiding fees, and managing finances across borders.',
+    features: [
+        'Bank account opening guide',
+        'International transfer comparison',
+        'Fee avoidance strategies',
+        'Credit building tips',
+        'Currency exchange guide'
+    ],
+    externalLink: 'https://www.internationalbanking.com/students',
+    actionText: 'Get Banking Tips'
+}
 };
             
                 
