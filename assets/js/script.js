@@ -1411,9 +1411,10 @@ const ThemeManager = {
         link.addEventListener('click', function(e) {
             if (this.closest('.resource_action_buttons')) return;
             e.preventDefault();
-            
-            
-            let linkText = this.innerText.trim();
+                let linkText = this.innerText
+    .replace(/^[^\w]+/, '')
+    .replace(/\s+/g, ' ')
+    .trim();                
             
             linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();
 
