@@ -1408,16 +1408,13 @@ const ThemeManager = {
                 
     
     allResourceLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.closest('.resource_action_buttons')) return;
-            e.preventDefault();
+link.addEventListener('click', function(e) {
+e.preventDefault();
 
-          let linkText = this.innerText.trim();
-
-// CLEAN TEXT
-linkText = linkText.replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
-
-let content = null;
+       let linkText = this.innerText.trim();   
+        linkText = linkText.replace(/<i class="[^"]*"><\/i>/, '').trim();  
+          
+        let content = null;
 
 // Exact match first
 for (let key in resourceContent) {
@@ -1441,7 +1438,7 @@ if (!content) {
 if (!content) {
     for (let key in resourceContent) {
         let title = resourceContent[key].title;
-        // Remove emoji and icon from title for comparison
+        // Remove emoji and special chars for comparison
         let cleanTitle = title.replace(/[^\w\s]/g, '').trim();
         let cleanLinkText = linkText.replace(/[^\w\s]/g, '').trim();
         
@@ -1451,47 +1448,50 @@ if (!content) {
         }
     }
 }
-            
-           
-            if (!content) {
-                content = {
-                    title: linkText,
-                    description: 'Resource guide for study abroad students.',
-                    details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
-                    features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
-                    externalLink: 'https://www.google.com',
-                    actionText: 'Learn More'
-                };
-            }
-            
-            modalTitle.innerHTML = content.title;
-            modalContent.innerHTML = `
-                <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
-                <p>${content.details}</p>
-                
-                <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px";>✨ Key Features:</h4>
-                <ul style="margin-bottom: 40px;">
-                    ${content.features.map(f => `<li style="margin-bottom: 18px;font-size: 18px;">✓ ${f}</li>`).join('')}
-                </ul>
-                
-                <div class="resource_action_buttons">
-                    <a href="${content.externalLink}" target="_blank" class="resource_btn resource_btn_primary">
-                        ${content.actionText} 🔗
-                    </a>
-                    <button onclick="window.print()" class="resource_btn resource_btn_secondary">
-                        📄 Save as PDF
-                    </button>
-                </div>
-                
-                <p style="margin-top: 20px; font-size: 12px; color: #999;">
-                    ⚡ You will be redirected to an external resource. All tools are free to use.
-                </p>
-            `;
-            
-            resourceModalBox.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        });
+          
+        if (!content) {
+            content = {
+                title: linkText,
+                description: 'Resource guide for study abroad students.',
+                details: 'This resource will help you with your study abroad journey. More detailed information is coming soon.',
+                features: ['Interactive tools', 'Expert advice', 'Student testimonials', 'Step-by-step guides'],
+                externalLink: '#',
+                actionText: 'Learn More'
+            };
+        }
+          
+        modalTitle.innerHTML = content.title;
+        modalContent.innerHTML = `
+            <h3 style="margin-bottom: 10px;">📖 ${content.description}</h3>
+            <p>${content.details}</p>
+              
+            <h4 style="margin-bottom: 20px;margin-top:20px; font-size: 20px";>✨ Key Features:</h4>
+            <ul style="margin-bottom: 40px;">
+                ${content.features.map(f => `<li style="margin-bottom: 18px;font-size: 18px;">✓ ${f}</li>`).join('')}
+            </ul>
+              
+            <div class="resource_action_buttons">
+                <a href="${content.externalLink}" target="_blank" class="resource_btn resource_btn_primary">
+                    ${content.actionText} 🔗
+                </a>
+                <button onclick="window.print()" class="resource_btn resource_btn_secondary">
+                    📄 Save as PDF
+                </button>
+            </div>
+              
+            <p style="margin-top: 20px; font-size: 12px; color: #999;">
+                ⚡ You will be redirected to an external resource. All tools are free to use.
+            </p>
+        `;
+          
+        resourceModalBox.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     });
+});
+
+
+            
+            
     
     if(resourceCloseButton) {
         resourceCloseButton.onclick = function() {
