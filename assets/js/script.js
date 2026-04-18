@@ -1131,278 +1131,281 @@ const ThemeManager = {
     const resourceCloseButton = document.querySelector('.resource_modal_close');
     
     const resourceContent = {
-        'Scholarship Finder Tool': {
-            title: '🎓 Scholarship Finder Tool',
-            description: 'Find scholarships that match your profile and destination country.',
-            details: 'This tool helps you discover thousands of international scholarships based on your academic background, country preference, and field of study.',
-            features: [
-                'Personalized scholarship recommendations',
-                'Application deadline alerts',
-                'Eligibility checker',
-                'Success rate calculator'
-            ],
-            externalLink: 'https://www.scholars4dev.com',
-            actionText: 'Search Scholarships'
-        },
-        'Cost of Living Calculator': {
-            title: '💰 Cost of Living Calculator',
-            description: 'Calculate your monthly expenses in different countries.',
-            details: 'Compare living costs including accommodation, food, transportation, healthcare, and entertainment across major study destinations.',
-            features: [
-                'City-wise comparison',
-                'Student budget templates',
-                'Part-time work income estimator',
-                'Currency converter'
-            ],
-            externalLink: 'https://www.numbeo.com/cost-of-living/',
-            actionText: 'Calculate Now'
-        },
-        'Student Loan Guide': {
-            title: '📘 Student Loan Guide',
-            description: 'Complete guide to education loans for international students.',
-            details: 'Learn about different loan options, interest rates, repayment plans, and eligibility criteria for studying abroad.',
-            features: [
-                'Government vs private loans',
-                'Interest rate comparison',
-                'Loan application process',
-                'Repayment strategies'
-            ],
-            externalLink: 'https://www.internationalstudentloan.com/',
-            actionText: 'Explore Loans'
-        },
-        'Part-time Work Regulations': {
-            title: '💼 Part-time Work Regulations',
-            description: 'Know your rights and limitations for working while studying.',
-            details: 'Country-wise guide to work permits, hour limits, minimum wages, and tax regulations for international students.',
-            features: [
-                'Country-specific work hour limits',
-                'Tax filing guides',
-                'Work permit application',
-                'Rights and protections'
-            ],
-            externalLink: 'https://www.internationalstudents.org/work-regulations',
-            actionText: 'View Regulations'
-        },
-        
-        'Personal Statement Builder': {
-            title: '✍️ Personal Statement Builder',
-            description: 'Create compelling personal statements with AI assistance.',
-            details: 'Step-by-step guide to write impressive personal statements that stand out to admission committees.',
-            features: [
-                'Template library',
-                'Success examples',
-                'AI writing assistant',
-                'Peer review system'
-            ],
-            externalLink: 'https://www.studyingabroad.com/ps-builder',
-            actionText: 'Start Building'
-        },
-        'Document Checklist': {
-            title: '📋 Document Checklist',
-            description: 'Complete checklist of required documents for applications.',
-            details: 'Track all necessary documents for university applications, visa processing, and pre-departure preparations.',
-            features: [
-                'Country-wise requirements',
-                'Downloadable PDF checklist',
-                'Document expiry alerts',
-                'Notarization guide'
-            ],
-            externalLink: 'https://www.documentchecklist.com/studyabroad',
-            actionText: 'Get Checklist'
-        },
-        'University Comparison Tool': {
-            title: '🏛️ University Comparison Tool',
-            description: 'Compare universities based on rankings, fees, and more.',
-            details: 'Side-by-side comparison of universities based on QS rankings, tuition fees, acceptance rates, and student reviews.',
-            features: [
-                'Ranking comparison',
-                'Fee structure analysis',
-                'Acceptance rates',
-                'Alumni reviews'
-            ],
-            externalLink: 'https://www.topuniversities.com/university-rankings',
-            actionText: 'Compare Now'
-        },
-        'Deadline Tracker': {
-            title: '⏰ Deadline Tracker',
-            description: 'Never miss an application deadline again.',
-            details: 'Personalized deadline calendar for university applications, scholarship deadlines, and visa appointments.',
-            features: [
-                'Custom reminders',
-                'Email notifications',
-                'Calendar integration',
-                'Priority sorting'
-            ],
-            externalLink: 'https://www.deadlinetracker.com/student',
-            actionText: 'Set Reminders'
-        },
-        
-        'Country-Specific Student Forums': {
-            title: '🌍 Country-Specific Student Forums',
-            description: 'Connect with students in your destination country.',
-            details: 'Join country-wise forums to get insider tips, local guidance, and peer support from current international students.',
-            features: [
-                'Country-wise communities',
-                'City-specific groups',
-                'Real-time chat',
-                'Expert Q&A sessions'
-            ],
-            externalLink: 'https://www.studentforums.net',
-            actionText: 'Join Forum'
-        },
-        'Connect with Current Students': {
-            title: '🤝 Connect with Current Students',
-            description: 'Direct mentorship from students studying abroad.',
-            details: 'Platform to connect with current international students who share their real experiences and advice.',
-            features: [
-                'One-on-one chat',
-                'Video calls',
-                'Success stories',
-                'Ask anything sessions'
-            ],
-            externalLink: 'https://www.connectwithstudents.com',
-            actionText: 'Find Mentors'
-        },
-        'Alumni Mentorship Program': {
-            title: '🎓 Alumni Mentorship Program',
-            description: 'Learn from successful alumni who completed their studies.',
-            details: 'Get guidance from alumni about career paths, job opportunities, and life after graduation.',
-            features: [
-                'Career guidance',
-                'Resume reviews',
-                'Job referrals',
-                'Networking events'
-            ],
-            externalLink: 'https://www.alumnimentorship.org',
-            actionText: 'Join Program'
-        },
-        'Cultural Adaptation Workshops': {
-            title: '🌏 Cultural Adaptation Workshops',
-            description: 'Prepare for cultural differences and new environments.',
-            details: 'Interactive workshops to help you adapt to new cultures, overcome homesickness, and build cross-cultural communication skills.',
-            features: [
-                'Free webinars',
-                'Cultural sensitivity training',
-                'Local customs guide',
-                'Language tips'
-            ],
-            externalLink: 'https://www.culturaladaptation.com/students',
-            actionText: 'Register Now'
-        },
-        'Mental Health Resources': {
-            title: '🧠 Mental Health Resources',
-            description: 'Support for your mental wellbeing',
-            details: 'Free and confidential mental health support for international students. Access counseling services, stress management tools, and 24/7 crisis helplines.',
-            features: [
-                'Free counseling services',
-                'Stress management guides',
-                'Anxiety coping strategies',
-                '24/7 crisis helplines',
-                'Student support groups'
-            ],
-            externalLink: 'https://www.internationalstudentwellness.com',
-            actionText: 'Get Support'
-        },
-        'International Insurance Guide': {
-            title: '🏥 International Insurance Guide',
-            description: 'Complete health insurance guide',
-            details: 'Understand health insurance requirements, coverage options, claims process, and how to choose the best plan for your needs as an international student.',
-            features: [
-                'Insurance requirement by country',
-                'Coverage comparison',
-                'Claims process guide',
-                'Emergency medical tips',
-                'Cost saving strategies'
-            ],
-            externalLink: 'https://www.internationalstudentinsurance.com/guide',
-            actionText: 'Compare Insurance'
-        },
-        'Finding Healthcare Abroad': {
-            title: '🩺 Finding Healthcare Abroad',
-            description: 'Access medical care in your host country',
-            details: 'How to find doctors, hospitals, pharmacies, and emergency services in your destination country. Learn about appointment systems and medical vocabulary.',
-            features: [
-                'Finding local doctors',
-                'Hospital directories',
-                'Pharmacy guide',
-                'Emergency numbers',
-                'Medical appointment tips'
-            ],
-            externalLink: 'https://www.healthcareabroad.com/students',
-            actionText: 'Find Healthcare'
-        },
-        'Wellness Check-ins': {
-            title: '💚 Wellness Check-ins',
-            description: 'Regular wellness monitoring',
-            details: 'Regular wellness reminders and self-assessment tools to maintain your physical and mental health while studying abroad. Track your wellbeing journey.',
-            features: [
-                'Daily wellness reminders',
-                'Self-assessment tools',
-                'Mood tracking',
-                'Healthy habit builder',
-                'Wellness tips newsletter'
-            ],
-            externalLink: 'https://www.studentwellnesscheck.org',
-            actionText: 'Start Check-in'
-        },
-        
-        'Student Forum Access': {
-            title: '💬 Student Forum Access',
-            description: 'Connect with fellow students',
-            details: 'Join global student forums to ask questions, share experiences, get advice, and build friendships with international students from around the world.',
-            features: [
-                'Country-wise communities',
-                'University-specific groups',
-                'Real-time discussions',
-                'Expert Q&A sessions',
-                'Event announcements'
-            ],
-            externalLink: 'https://www.studentforums.net',
-            actionText: 'Join Forum'
-        },
-        'Cultural Buddy Program': {
-            title: '👥 Cultural Buddy Program',
-            description: 'Get paired with a local buddy',
-            details: 'Get matched with a local or international buddy who will help you adapt to new culture, practice language, navigate daily life, and build meaningful connections.',
-            features: [
-                'One-on-one buddy matching',
-                'Cultural exchange activities',
-                'Language practice partners',
-                'Local tips and guides',
-                'Monthly meetups'
-            ],
-            externalLink: 'https://www.culturalbuddy.com',
-            actionText: 'Find a Buddy'
-        },
-        'Alumni Network': {
-            title: '🎓 Alumni Network',
-            description: 'Connect with successful graduates',
-            details: 'Join our global alumni network. Find mentors, discover career opportunities, attend networking events, and stay connected with your study abroad community.',
-            features: [
-                'Global alumni directory',
-                'Mentorship opportunities',
-                'Job board access',
-                'Networking events',
-                'Success stories'
-            ],
-            externalLink: 'https://www.alumninetwork.com',
-            actionText: 'Join Network'
-        },
-        'Emergency Contacts Database': {
-            title: '🚨 Emergency Contacts Database',
-            description: 'Essential emergency information',
-            details: 'Access essential emergency numbers, embassy contacts, police stations, hospitals, and safety resources for international students in different countries.',
-            features: [
-                'Emergency numbers by country',
-                'Embassy contact list',
-                'Safety tips and guides',
-                '24/7 helplines',
-                'Travel advisory updates'
-            ],
-            externalLink: 'https://www.emergencycontacts.com/students',
-            actionText: 'View Contacts'
-        }
-    };
+    'Scholarship Finder Tool': {
+        title: '🎓 Scholarship Finder Tool',
+        description: 'Find scholarships that match your profile and destination country.',
+        details: 'This tool helps you discover thousands of international scholarships based on your academic background, country preference, and field of study.',
+        features: [
+            'Personalized scholarship recommendations',
+            'Application deadline alerts',
+            'Eligibility checker',
+            'Success rate calculator'
+        ],
+        externalLink: 'https://www.scholars4dev.com',
+        actionText: 'Search Scholarships'
+    },
+    'Cost of Living Calculator': {
+        title: '💰 Cost of Living Calculator',
+        description: 'Calculate your monthly expenses in different countries.',
+        details: 'Compare living costs including accommodation, food, transportation, healthcare, and entertainment across major study destinations.',
+        features: [
+            'City-wise comparison',
+            'Student budget templates',
+            'Part-time work income estimator',
+            'Currency converter'
+        ],
+        externalLink: 'https://www.numbeo.com/cost-of-living/',
+        actionText: 'Calculate Now'
+    },
+    'Student Loan Guide': {
+        title: '📘 Student Loan Guide',
+        description: 'Complete guide to education loans for international students.',
+        details: 'Learn about different loan options, interest rates, repayment plans, and eligibility criteria for studying abroad.',
+        features: [
+            'Government vs private loans',
+            'Interest rate comparison',
+            'Loan application process',
+            'Repayment strategies'
+        ],
+        externalLink: 'https://www.internationalstudentloan.com/',
+        actionText: 'Explore Loans'
+    },
+    'Part-time Work Regulations': {
+        title: '💼 Part-time Work Regulations',
+        description: 'Know your rights and limitations for working while studying.',
+        details: 'Country-wise guide to work permits, hour limits, minimum wages, and tax regulations for international students.',
+        features: [
+            'Country-specific work hour limits',
+            'Tax filing guides',
+            'Work permit application',
+            'Rights and protections'
+        ],
+        externalLink: 'https://www.internationalstudent.com/study_guide/working.php',
+        actionText: 'View Regulations'
+    },
+
+    'Personal Statement Builder': {
+        title: '✍️ Personal Statement Builder',
+        description: 'Create compelling personal statements with AI assistance.',
+        details: 'Step-by-step guide to write impressive personal statements that stand out to admission committees.',
+        features: [
+            'Template library',
+            'Success examples',
+            'AI writing assistant',
+            'Peer review system'
+        ],
+        externalLink: 'https://www.ucas.com/undergraduate/applying-university/writing-personal-statement',
+        actionText: 'Start Building'
+    },
+    'Document Checklist': {
+        title: '📋 Document Checklist',
+        description: 'Complete checklist of required documents for applications.',
+        details: 'Track all necessary documents for university applications, visa processing, and pre-departure preparations.',
+        features: [
+            'Country-wise requirements',
+            'Downloadable PDF checklist',
+            'Document expiry alerts',
+            'Notarization guide'
+        ],
+        externalLink: 'https://www.internationalstudent.com/study_guide/preparation/',
+        actionText: 'Get Checklist'
+    },
+    'University Comparison Tool': {
+        title: '🏛️ University Comparison Tool',
+        description: 'Compare universities based on rankings, fees, and more.',
+        details: 'Side-by-side comparison of universities based on QS rankings, tuition fees, acceptance rates, and student reviews.',
+        features: [
+            'Ranking comparison',
+            'Fee structure analysis',
+            'Acceptance rates',
+            'Alumni reviews'
+        ],
+        externalLink: 'https://www.topuniversities.com/university-rankings',
+        actionText: 'Compare Now'
+    },
+    'Deadline Tracker': {
+        title: '⏰ Deadline Tracker',
+        description: 'Never miss an application deadline again.',
+        details: 'Personalized deadline calendar for university applications, scholarship deadlines, and visa appointments.',
+        features: [
+            'Custom reminders',
+            'Email notifications',
+            'Calendar integration',
+            'Priority sorting'
+        ],
+        externalLink: 'https://calendar.google.com',
+        actionText: 'Set Reminders'
+    },
+
+    'Country-Specific Student Forums': {
+        title: '🌍 Country-Specific Student Forums',
+        description: 'Connect with students in your destination country.',
+        details: 'Join country-wise forums to get insider tips, local guidance, and peer support from current international students.',
+        features: [
+            'Country-wise communities',
+            'City-specific groups',
+            'Real-time chat',
+            'Expert Q&A sessions'
+        ],
+        externalLink: 'https://www.reddit.com/r/InternationalStudents/',
+        actionText: 'Join Forum'
+    },
+    'Connect with Current Students': {
+        title: '🤝 Connect with Current Students',
+        description: 'Direct mentorship from students studying abroad.',
+        details: 'Platform to connect with current international students who share their real experiences and advice.',
+        features: [
+            'One-on-one chat',
+            'Video calls',
+            'Success stories',
+            'Ask anything sessions'
+        ],
+        externalLink: 'https://www.linkedin.com',
+        actionText: 'Find Mentors'
+    },
+    'Alumni Mentorship Program': {
+        title: '🎓 Alumni Mentorship Program',
+        description: 'Learn from successful alumni who completed their studies.',
+        details: 'Get guidance from alumni about career paths, job opportunities, and life after graduation.',
+        features: [
+            'Career guidance',
+            'Resume reviews',
+            'Job referrals',
+            'Networking events'
+        ],
+        externalLink: 'https://www.linkedin.com/alumni',
+        actionText: 'Join Program'
+    },
+    'Cultural Adaptation Workshops': {
+        title: '🌏 Cultural Adaptation Workshops',
+        description: 'Prepare for cultural differences and new environments.',
+        details: 'Interactive workshops to help you adapt to new cultures, overcome homesickness, and build cross-cultural communication skills.',
+        features: [
+            'Free webinars',
+            'Cultural sensitivity training',
+            'Local customs guide',
+            'Language tips'
+        ],
+        externalLink: 'https://www.edx.org/learn/culture',
+        actionText: 'Register Now'
+    },
+    'Mental Health Resources': {
+        title: '🧠 Mental Health Resources',
+        description: 'Support for your mental wellbeing',
+        details: 'Free and confidential mental health support for international students.',
+        features: [
+            'Free counseling services',
+            'Stress management guides',
+            'Anxiety coping strategies',
+            '24/7 crisis helplines',
+            'Student support groups'
+        ],
+        externalLink: 'https://www.who.int/health-topics/mental-health',
+        actionText: 'Get Support'
+    },
+    'International Insurance Guide': {
+        title: '🏥 International Insurance Guide',
+        description: 'Complete health insurance guide',
+        details: 'Understand health insurance requirements and coverage.',
+        features: [
+            'Insurance requirement by country',
+            'Coverage comparison',
+            'Claims process guide',
+            'Emergency medical tips',
+            'Cost saving strategies'
+        ],
+        externalLink: 'https://www.internationalstudentinsurance.com',
+        actionText: 'Compare Insurance'
+    },
+    'Finding Healthcare Abroad': {
+        title: '🩺 Finding Healthcare Abroad',
+        description: 'Access medical care in your host country',
+        details: 'Find doctors, hospitals, pharmacies abroad.',
+        features: [
+            'Finding local doctors',
+            'Hospital directories',
+            'Pharmacy guide',
+            'Emergency numbers',
+            'Medical appointment tips'
+        ],
+        externalLink: 'https://wwwnc.cdc.gov/travel',
+        actionText: 'Find Healthcare'
+    },
+    'Wellness Check-ins': {
+        title: '💚 Wellness Check-ins',
+        description: 'Regular wellness monitoring',
+        details: 'Track your physical and mental health.',
+        features: [
+            'Daily wellness reminders',
+            'Self-assessment tools',
+            'Mood tracking',
+            'Healthy habit builder',
+            'Wellness tips newsletter'
+        ],
+        externalLink: 'https://www.nhs.uk/every-mind-matters/',
+        actionText: 'Start Check-in'
+    },
+
+    'Student Forum Access': {
+        title: '💬 Student Forum Access',
+        description: 'Connect with fellow students',
+        details: 'Join global student forums.',
+        features: [
+            'Country-wise communities',
+            'University-specific groups',
+            'Real-time discussions',
+            'Expert Q&A sessions',
+            'Event announcements'
+        ],
+        externalLink: 'https://www.reddit.com/r/InternationalStudents/',
+        actionText: 'Join Forum'
+    },
+    'Cultural Buddy Program': {
+        title: '👥 Cultural Buddy Program',
+        description: 'Get paired with a local buddy',
+        details: 'Connect with locals and students.',
+        features: [
+            'One-on-one buddy matching',
+            'Cultural exchange activities',
+            'Language practice partners',
+            'Local tips and guides',
+            'Monthly meetups'
+        ],
+        externalLink: 'https://www.interpals.net',
+        actionText: 'Find a Buddy'
+    },
+    'Alumni Network': {
+        title: '🎓 Alumni Network',
+        description: 'Connect with successful graduates',
+        details: 'Build your global network.',
+        features: [
+            'Global alumni directory',
+            'Mentorship opportunities',
+            'Job board access',
+            'Networking events',
+            'Success stories'
+        ],
+        externalLink: 'https://www.linkedin.com/alumni',
+        actionText: 'Join Network'
+    },
+    'Emergency Contacts Database': {
+        title: '🚨 Emergency Contacts Database',
+        description: 'Essential emergency information',
+        details: 'Access global emergency info.',
+        features: [
+            'Emergency numbers by country',
+            'Embassy contact list',
+            'Safety tips and guides',
+            '24/7 helplines',
+            'Travel advisory updates'
+        ],
+        externalLink: 'https://www.iamat.org',
+        actionText: 'View Contacts'
+    }
+};
+            
+                
+                
     
     allResourceLinks.forEach(link => {
         link.addEventListener('click', function(e) {
