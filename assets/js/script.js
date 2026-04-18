@@ -1409,6 +1409,7 @@ const ThemeManager = {
     
     allResourceLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            if (this.closest('.resource_action_buttons')) return;
             e.preventDefault();
             
             
