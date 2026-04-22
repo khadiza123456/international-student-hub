@@ -549,7 +549,7 @@ function showCountryGuideModal(country) {
                         padding-top: 2rem;
                         border-top: 1px solid var(--border-color);
                     ">
-                        <button onclick="closeModal()" style="
+                        <button onclick="ccloseModal()" style="
                             padding: 0.8rem 1.5rem;
                             background: var(--primary);
                             color: white;
@@ -628,8 +628,7 @@ function ccloseModal() {
 
 // Download guide function
 function downloadGuide(country) {
-    alert(`Downloading ${country} Study Guide as PDF...`);
-    // In real implementation, this would download an actual PDF
+    window.print();
 }
 
 // Make functions globally available
@@ -674,42 +673,8 @@ document.addEventListener('click', (e) => {
     //   Contact Page
 
     // Contact Form Submission
-          const contactForm = document.getElementById('contactForm');
+     
     
-    if(contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            const formData = new FormData(this);
-            formData.append('_captcha', 'false');
-            formData.append('_subject', 'New Contact Form Message');
-            
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                if(response.ok) {
-                    alert('✅ Your message has been sent successfully! We will get back to you soon.');
-                    this.reset();
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch(error) {
-                alert('✅ Message sent! We will contact you shortly.');
-                this.reset();
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
 
           // FAQ Accordion
           const faqItems = document.querySelectorAll(".faq-item");
@@ -1043,85 +1008,35 @@ const ThemeManager = {
 
 
 
-    const ctaButton = document.querySelector('.cta-button-m');
-    const expmodal = document.getElementById('exp_share_modal');
-    const scloseBtn = document.querySelector('.exp_modal_close_btn');
-    const form = document.getElementById('exp_share_form');
-    const statusDiv = document.getElementById('exp_form_status');
-    
-    if(ctaButton) {
-        ctaButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            expmodal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        });
+   // শেয়ার এক্সপেরিয়েন্স মডাল - শুধু খোলা/বন্ধের জন্য
+const ctaButton = document.querySelector('.cta-button-m');
+const expmodal = document.getElementById('exp_share_modal');
+const scloseBtn = document.querySelector('.exp_modal_close_btn');
+const form = document.getElementById('exp_share_form');
+
+if(ctaButton) {
+    ctaButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        expmodal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+function scloseModal() {
+    expmodal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    if(form) form.reset();
+}
+
+if(scloseBtn) {
+    scloseBtn.onclick = scloseModal;
+}
+
+window.onclick = function(event) {
+    if (event.target == expmodal) {
+        scloseModal();
     }
-    
-    function scloseModal() {
-        expmodal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        statusDiv.style.display = 'none';
-        form.reset();
-    }
-    
-    if(scloseBtn) {
-        scloseBtn.onclick = scloseModal;
-    }
-    
-    window.onclick = function(event) {
-        if (event.target == expmodal) {
-            scloseModal();
-        }
-    }
-    
-    if(form) {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('exp_name').value;
-            const email = document.getElementById('exp_email').value;
-            const country = document.getElementById('exp_country').value;
-            const message = document.getElementById('exp_message').value;
-            
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('country', country);
-            formData.append('message', message);
-            
-            statusDiv.style.display = 'block';
-            statusDiv.className = 'exp_form_status';
-            statusDiv.innerHTML = '📧 Sending your experience...';
-            statusDiv.style.backgroundColor = '#e3f2fd';
-            statusDiv.style.color = '#0d47a1';
-            
-            try {
-                
-                const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    body: formData  
-                });
-                
-                const result = await response.json();
-                
-                if (result.success === true) {
-                    statusDiv.className = 'exp_form_status success';
-                    statusDiv.innerHTML = '✅ Thank you! Your experience has been sent successfully! We will get back to you soon.';
-                    form.reset();
-                    
-                    setTimeout(scloseModal, 3000);
-                } else {
-                    throw new Error('Submission failed');
-                }
-                
-            } catch (error) {
-                statusDiv.innerHTML = '✅ Message sent successfully!';
-            }
-        });
-    }
+}
 
     
     const allResourceLinks = document.querySelectorAll('.resource-links a');
@@ -1563,95 +1478,71 @@ e.preventDefault();
         }
     };
 
-    
-    const consultBtn = document.querySelector('.btn-secondary');
-    const consultModal = document.getElementById('consultModal');
-    const consultCloseBtn = document.querySelector('.consult_modal_close');
-    const consultForm = document.getElementById('consultForm');
-    const consultStatus = document.getElementById('consult_status');
-    
-    if(consultBtn) {
-        consultBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            consultModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('consult_date').min = today;
-        });
+   
+    const mainButton = document.getElementById('mainSearchButton');
+const panel = document.getElementById('searchPanel');
+const goButton = document.getElementById('submitQuery');
+const inputBox = document.getElementById('userQuery');
+const resultContainer = document.getElementById('resultPanel');
+const queryDisplay = document.getElementById('displayQuery');
+const closeButton = document.getElementById('closeSearchBtn'); // নতুন যোগ
+
+mainButton.addEventListener('click', function() {
+    panel.style.display = 'block';
+    resultContainer.style.display = 'none';
+    inputBox.value = '';
+});
+
+goButton.addEventListener('click', function() {
+    const searchText = inputBox.value.trim();
+    if (searchText === '') {
+        alert('দয়া করে কিছু লিখুন!');
+    } else {
+        queryDisplay.textContent = searchText;
+        resultContainer.style.display = 'block';
     }
+});
+
+// ক্লোজ বাটনের কাজ
+closeButton.addEventListener('click', function() {
+    panel.style.display = 'none';
+    resultContainer.style.display = 'none';
+    inputBox.value = '';
+});
+
+panel.style.display = 'none';
+resultContainer.style.display = 'none';
+
     
-    function closeConsultModal() {
-        consultModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        consultStatus.style.display = 'none';
-        if(consultForm) consultForm.reset();
+    // শুধু মডাল খোলা/বন্ধ করার কোড (ফর্ম সাবমিটের কিছু নেই)
+const consultBtn = document.querySelector('.btn-secondary');
+const consultModal = document.getElementById('consultModal');
+const consultCloseBtn = document.querySelector('.consult_modal_close');
+
+if(consultBtn) {
+    consultBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        consultModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+function closeConsultModal() {
+    consultModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+if(consultCloseBtn) {
+    consultCloseBtn.onclick = closeConsultModal;
+}
+
+window.onclick = function(event) {
+    if(event.target === consultModal) {
+        closeConsultModal();
     }
+}
     
-    if(consultCloseBtn) {
-        consultCloseBtn.onclick = closeConsultModal;
-    }
     
-    window.onclick = function(event) {
-        if(event.target === consultModal) {
-            closeConsultModal();
-        }
-    }
-    
-    if(consultForm) {
-        consultForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('consult_name').value;
-            const email = document.getElementById('consult_email').value;
-            const phone = document.getElementById('consult_phone').value;
-            const country = document.getElementById('consult_country').value;
-            const date = document.getElementById('consult_date').value;
-            const time = document.getElementById('consult_time').value;
-            const message = document.getElementById('consult_message').value;
-            
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('phone', phone);
-            formData.append('country', country);
-            formData.append('date', date);
-            formData.append('time', time);
-            formData.append('message', message);
-            formData.append('_subject', 'New Consultation Request from ' + name);
-            
-            consultStatus.style.display = 'block';
-            consultStatus.className = 'consult_status';
-            consultStatus.innerHTML = '⏳ Sending your request...';
-            consultStatus.style.backgroundColor = '#e3f2fd';
-            consultStatus.style.color = '#0d47a1';
-            
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/khadizamaria523@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if(result.success === true) {
-                    consultStatus.className = 'consult_status success';
-                    consultStatus.innerHTML = '✅ Thank you! We will contact you within 24 hours to confirm your consultation.';
-                    consultForm.reset();
-                    
-                    setTimeout(closeConsultModal, 4000);
-                } else {
-                    throw new Error('Submission failed');
-                }
-                
-            } catch(error) {
-                consultStatus.innerHTML = '✅ Message sent successfully!';
-            }
-        });
-    }
 
 
     window.addEventListener('error', function(e) {

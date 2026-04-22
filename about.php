@@ -1,0 +1,359 @@
+<?php
+  include 'include/header.php';
+?>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <!-- Mission & Vision -->
+        <div class="mission-vision">
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              We strive to make quality education accessible to all,
+              regardless of geographical boundaries. To empower students
+              worldwide with accurate, comprehensive, and personalized
+              guidance for their international education journey. We strive to
+              make quality education accessible to all, regardless of
+              geographical boundaries. By offering clarity, encouragement, and
+              real-world insights, we aim to inspire students to dream bigger,
+              step beyond their comfort zones, and embrace global learning
+              with courage and excitement.
+            </p>
+          </div>
+
+          <div class="mv-card">
+            <div class="mv-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              A world where every student has the opportunity to pursue their
+              academic dreams globallyWe envision a future where international
+              education is seamless, transparent, and achievable for everyone.
+              We envision a future where international education is seamless,
+              transparent, and achievable for everyone. We strive to remove
+              confusion, reduce fear, and provide students with clear,
+              reliable information that supports them in making informed
+              decisions at every step of their journey.
+            </p>
+          </div>
+        </div>
+
+        <!-- Our Story -->
+        <div class="story-section">
+          <div class="story-grid">
+            <div class="story-content">
+              <h3>Our Story</h3>
+              <p>
+                International Student Hub was born from a simple observation:
+                studying abroad was unnecessarily complicated. In 2015, our
+                founder Sarah Miller, herself an international student,
+                experienced firsthand the challenges of navigating university
+                applications, visa processes, and cultural adaptation.
+              </p>
+
+              <p>
+                What started as a small blog sharing study abroad tips has
+                grown into a comprehensive platform serving thousands of
+                students across 120+ countries. Today, we're proud to have
+                helped over 15,000 students successfully begin their
+                international education journey. Over the years, we have
+                transformed into a trusted global companion for students who
+                seek clarity and confidence in planning their educational
+                future. Our platform now hosts detailed guides, real-life
+                stories, and practical resources that simplify every stage of
+                the study abroad process. We continuously collaborate with
+                students, alumni, and mentors worldwide to bring authentic,
+                experience-driven insights to our community. With each passing
+                year, our network expands, allowing us to reach, support, and
+                inspire more learners across different cultures and
+                backgrounds. We strive to break down the barriers of
+                misinformation and uncertainty that often discourage students
+                from pursuing international opportunities. Through our
+                content, we aim to offer not just information, but also
+                encouragement, motivation, and emotional reassurance. As our
+                journey continues, we remain dedicated to creating a space
+                where students can dream fearlessly, plan wisely, and step
+                confidently into the world. Our mission is simple—empower
+                every learner to explore global possibilities and unlock their
+                full potential.
+              </p>
+
+              <ul class="story-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> 8+ years of experience
+                  in international education
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 98% student satisfaction
+                  rate
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Partnerships with 200+
+                  universities worldwide
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Scholarship assistance
+                  worth $5M+ secured
+                </li>
+              </ul>
+            </div>
+            <div class="story-stats">
+              <div class="story-stat-item">
+                <div class="story-stat-number">2015</div>
+                <div class="story-stat-label">Founded</div>
+              </div>
+              <div class="story-stat-item">
+                <div class="story-stat-number">15K+</div>
+                <div class="story-stat-label">Students Helped</div>
+              </div>
+              <div class="story-stat-item">
+                <div class="story-stat-number">120+</div>
+                <div class="story-stat-label">Countries</div>
+              </div>
+              <div class="story-stat-item">
+                <div class="story-stat-number">98%</div>
+                <div class="story-stat-label">Success Rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Core Values</h2>
+          <p>The principles that guide everything we do</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4>Student First</h4>
+            <p>
+              Every decision we make prioritizes the success and well-being of
+              our students. Your dreams are our mission.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Integrity</h4>
+            <p>
+              We provide honest, transparent, and unbiased guidance. No hidden
+              fees, no misleading information.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Innovation</h4>
+            <p>
+              Constantly evolving our tools and resources to make
+              international education more accessible.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h4>Inclusivity</h4>
+            <p>
+              Welcoming students from all backgrounds, cultures, and financial
+              circumstances.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Partnership</h4>
+            <p>
+              Building lasting relationships with universities, organizations,
+              and most importantly, our students.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Excellence</h4>
+            <p>
+              Striving for the highest quality in every resource, guide, and
+              consultation we provide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Meet Our Leadership Team</h2>
+          <p>Experienced professionals dedicated to your success</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="member-avatar">SM</div>
+            <h4>Sarah Miller</h4>
+            <div class="member-role">Founder & CEO</div>
+            <p class="member-bio">
+              Former international student at University of Toronto. 12+ years
+              experience in international education. Harvard Graduate School
+              of Education alumna.
+            </p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="member-avatar">AK</div>
+            <h4>Ahmed Khan</h4>
+            <div class="member-role">Head of Admissions</div>
+            <p class="member-bio">
+              10+ years in university admissions counseling. Former admissions
+              officer at University of British Columbia. Masters in Higher
+              Education.
+            </p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="member-avatar">MJ</div>
+            <h4>Maria Johnson</h4>
+            <div class="member-role">Director of Student Services</div>
+            <p class="member-bio">
+              Expert in student wellness and cultural adaptation. PhD in
+              Counseling Psychology. Helped 5,000+ students transition
+              smoothly.
+            </p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="member-avatar">CR</div>
+            <h4>Chen Rodriguez</h4>
+            <div class="member-role">Global Partnerships Director</div>
+            <p class="member-bio">
+              Established partnerships with 200+ universities across 25
+              countries. Former international student advisor in Australia.
+            </p>
+            <div class="member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="container">
+      <div class="achievements-section">
+        <div class="section-title" style="color: white">
+          <h2 style="color: white">Our Impact</h2>
+          <p style="color: rgba(255, 255, 255, 0.9)">
+            Making a difference in international education
+          </p>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-item">
+            <div class="achievement-number">15,000+</div>
+            <div class="achievement-label">Students Placed</div>
+          </div>
+          <div class="achievement-item">
+            <div class="achievement-number">200+</div>
+            <div class="achievement-label">University Partners</div>
+          </div>
+          <div class="achievement-item">
+            <div class="achievement-number">$5M+</div>
+            <div class="achievement-label">Scholarships Secured</div>
+          </div>
+          <div class="achievement-item">
+            <div class="achievement-number">120+</div>
+            <div class="achievement-label">Countries Reached</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Partners</h2>
+          <p>Trusted by leading universities and organizations worldwide</p>
+        </div>
+
+        <div class="partners-grid">
+          <div class="partner-item">
+            <a style="font-size: 12px" target="_blank" href="https://www.utoronto.ca/">
+              <i class="fas fa-university"></i>
+              <span>University of Toronto</span></a>
+          </div>
+
+          <div class="partner-item">
+            <a style="font-size: 12px" target="_blank" href="https://www.unimelb.edu.au/">
+              <i class="fas fa-university"></i>
+              <span>University of Melbourne</span></a>
+          </div>
+
+          <div class="partner-item">
+            <a style="font-size: 12px" target="_blank" href="https://www.manchester.ac.uk/">
+              <i class="fas fa-university"></i>
+              <span>University of Manchester</span></a>
+          </div>
+          <div class="partner-item">
+            <a style="font-size: 12px" target="_blank" href="https://www.uvic.ca/index.php">
+              <i class="fas fa-university"></i>
+              <span>University of British Columbia</span></a>
+          </div>
+          <div class="partner-item">
+            <a style="font-size: 12px" target="_blank" href="https://www.tum.de/en/">
+              <i class="fas fa-university"></i>
+              <span>Technical University Munich</span></a>
+          </div>
+          <div class="partner-item">
+            <a style="font-size: 12px" target="_blank" href="https://www.u-tokyo.ac.jp/en/">
+              <i class="fas fa-university"></i>
+              <span>University of Tokyo</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <?php
+      include 'include/footer.php';
+    ?>

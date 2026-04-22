@@ -264,6 +264,70 @@ p {
   -o-border-radius: 0.4rem;
   border-radius: 0.4rem;
 }
+
+
+.btn-close {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.btn-close:hover {
+    background-color: #c82333;
+}
+        .btn-search {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.2s;
+        }
+        .btn-search:hover {
+            background-color: #0056b3;
+        }
+        .btn-go {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        .btn-go:hover {
+            background-color: #218838;
+        }
+        .search-panel {
+            margin-top: 20px;
+            display: none;
+        }
+        .search-panel input {
+            padding: 8px;
+            width: 65%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .result-panel {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 6px;
+            display: none;
+        }
+
+
 .header-wrap .site-mode .all-site--modes li.active a {
   color: var(--background);
   -webkit-transition: 0.3s all ease;
@@ -1302,14 +1366,36 @@ p {
   font-size: 1.1rem;
   opacity: 0.9;
 }
+.bookmark-form-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+    transition: 0.3s;
+}
 
+.bookmark-form-btn:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.resource-links li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-
+.btn-1,
 .btn {
   padding: 0.9rem 2rem;
   border-radius: 50px;
@@ -1333,12 +1419,14 @@ p {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.btn-secondary-1,
 .btn-secondary {
   background-color: transparent;
   color: white;
   border: 2px solid white;
 }
 
+.btn-secondary-1:hover,
 .btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);

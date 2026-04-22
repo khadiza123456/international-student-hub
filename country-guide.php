@@ -1,0 +1,780 @@
+<?php
+  include 'include/header.php';
+?>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-container">
+          <h2>Find Your Dream Study Destination</h2>
+          <div class="search-box-country">
+            <input type="text" placeholder="Search for a country, city, or university..." />
+            <button class="search-btn">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+          <div class="search-tags">
+            <div class="tag">Popular: USA</div>
+            <div class="tag">Affordable: Germany</div>
+            <div class="tag">English-speaking: Australia</div>
+            <div class="tag">Tech: Canada</div>
+            <div class="tag">Medicine: UK</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Countries -->
+    <!-- Popular Countries -->
+    <section class="popular-countries">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="heading">Popular Study Destinations</h2>
+          <p>Explore detailed guides for top study abroad countries</p>
+        </div>
+
+        <div class="countries-grid">
+          <!-- USA -->
+          <div class="country-card-guide">
+            <div class="country-flag">
+              <img
+                src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1182&q=80"
+                alt="United States" loading="lazy" />
+              <div class="flag-overlay"></div>
+              <div class="country-badge">
+                <i class="fas fa-star"></i> #1 Ranked
+              </div>
+            </div>
+            <div class="country-info">
+              <div class="country-header">
+                <h3 class="country-name">United States</h3>
+                <div class="country-icon">🇺🇸</div>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span style="
+                      margin-left: 8px;
+                      color: var(--text-secondary);
+                      font-size: 0.9rem;
+                    ">4.5/5</span>
+              </div>
+              <p class="country-description">
+                World's top universities with diverse programs and extensive
+                research opportunities.
+              </p>
+
+              <div class="country-stats">
+                <div class="stat">
+                  <span class="stat-value">4,000+</span>
+                  <span class="stat-label">Universities</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">$30-60K</span>
+                  <span class="stat-label">Annual Tuition</span>
+                </div>
+              </div>
+
+              <ul class="country-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> OPT Work Permit (1-3
+                  years)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> STEM programs highly
+                  valued
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Diverse cultural
+                  experience
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Strong industry
+                  connections
+                </li>
+              </ul>
+
+              <button class="view-guide-btn" onclick="viewCountryGuide('USA')">
+                <span>View Complete Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Canada -->
+          <div class="country-card-guide">
+            <div class="country-flag">
+              <img
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                alt="Canada" loading="lazy" />
+              <div class="flag-overlay"></div>
+              <div class="country-badge" style="background: var(--secondary)">
+                <i class="fas fa-home"></i> Immigration Friendly
+              </div>
+            </div>
+            <div class="country-info">
+              <div class="country-header">
+                <h3 class="country-name">Canada</h3>
+                <div class="country-icon">🇨🇦</div>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span style="
+                      margin-left: 8px;
+                      color: var(--text-secondary);
+                      font-size: 0.9rem;
+                    ">5/5</span>
+              </div>
+              <p class="country-description">
+                High quality education with excellent post-study work and
+                immigration pathways.
+              </p>
+
+              <div class="country-stats">
+                <div class="stat">
+                  <span class="stat-value">PGWP</span>
+                  <span class="stat-label">Work Permit</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">$15-35K</span>
+                  <span class="stat-label">Annual Tuition</span>
+                </div>
+              </div>
+
+              <ul class="country-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> Post-Graduation Work
+                  Permit
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> PR pathways for
+                  graduates
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Safe and multicultural
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Healthcare benefits
+                </li>
+              </ul>
+
+              <button class="view-guide-btn" onclick="viewCountryGuide('Canada')">
+                <span>View Complete Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- UK -->
+          <div class="country-card-guide">
+            <div class="country-flag">
+              <img
+                src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                alt="United Kingdom" loading="lazy" />
+              <div class="flag-overlay"></div>
+              <div class="country-badge" style="background: var(--success)">
+                <i class="fas fa-history"></i> Historic
+              </div>
+            </div>
+            <div class="country-info">
+              <div class="country-header">
+                <h3 class="country-name">United Kingdom</h3>
+                <div class="country-icon">🇬🇧</div>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span style="
+                      margin-left: 8px;
+                      color: var(--text-secondary);
+                      font-size: 0.9rem;
+                    ">4/5</span>
+              </div>
+              <p class="country-description">
+                Historic universities with shorter degree durations and global
+                recognition.
+              </p>
+
+              <div class="country-stats">
+                <div class="stat">
+                  <span class="stat-value">3 Years</span>
+                  <span class="stat-label">Bachelor's Degree</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">$20-45K</span>
+                  <span class="stat-label">Annual Tuition</span>
+                </div>
+              </div>
+
+              <ul class="country-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> Graduate Route visa (2
+                  years)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 1-year Master's programs
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Rich cultural heritage
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Global alumni network
+                </li>
+              </ul>
+
+              <button class="view-guide-btn" onclick="viewCountryGuide('UK')">
+                <span>View Complete Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="countries-grid">
+          <!-- Australia -->
+          <div class="country-card-guide">
+            <div class="country-flag">
+              <img
+                src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                alt="Australia" loading="lazy" />
+              <div class="flag-overlay"></div>
+              <div class="country-badge">
+                <i class="fas fa-sun"></i> Quality Life
+              </div>
+            </div>
+            <div class="country-info">
+              <div class="country-header">
+                <h3 class="country-name">Australia</h3>
+                <div class="country-icon">🇦🇺</div>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.5/5</span>
+              </div>
+              <p class="country-description">
+                High standard of living with strong post-study work
+                opportunities and beautiful landscapes.
+              </p>
+
+              <div class="country-stats">
+                <div class="stat">
+                  <span class="stat-value">2-4 Years</span>
+                  <span class="stat-label">PSW Visa</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">$20-45K</span>
+                  <span class="stat-label">Annual Tuition</span>
+                </div>
+              </div>
+
+              <ul class="country-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> Post-Study Work visa
+                  (2-4 years)
+                </li>
+                <li><i class="fas fa-check-circle"></i> Strong job market</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Great work-life balance
+                </li>
+                <li><i class="fas fa-check-circle"></i> Outdoor lifestyle</li>
+              </ul>
+
+              <button class="view-guide-btn" onclick="viewCountryGuide('Australia')">
+                <span>View Complete Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Germany -->
+          <div class="country-card-guide">
+            <div class="country-flag">
+              <img
+                src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                alt="Germany" loading="lazy" />
+              <div class="flag-overlay"></div>
+              <div class="country-badge" style="background: linear-gradient(135deg, #4a5568, #718096)">
+                <i class="fas fa-euro-sign"></i> Low Cost
+              </div>
+            </div>
+            <div class="country-info">
+              <div class="country-header">
+                <h3 class="country-name">Germany</h3>
+                <div class="country-icon">🇩🇪</div>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span style="
+                      margin-left: 8px;
+                      color: var(--text-secondary);
+                      font-size: 0.9rem;
+                    ">5/5</span>
+              </div>
+              <p class="country-description">
+                Tuition-free education at public universities with strong
+                engineering and tech programs.
+              </p>
+
+              <div class="country-stats">
+                <div class="stat">
+                  <span class="stat-value">€0-5K</span>
+                  <span class="stat-label">Annual Tuition</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">18 Months</span>
+                  <span class="stat-label">Job Seeker Visa</span>
+                </div>
+              </div>
+
+              <ul class="country-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> Mostly tuition-free
+                  education
+                </li>
+                <li><i class="fas fa-check-circle"></i> Strong economy</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> English-taught programs
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> EU work opportunities
+                </li>
+              </ul>
+
+              <button class="view-guide-btn" onclick="viewCountryGuide('Germany')">
+                <span>View Complete Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Japan -->
+          <div class="country-card-guide">
+            <div class="country-flag">
+              <img
+                src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                alt="Japan" loading="lazy" />
+              <div class="flag-overlay"></div>
+              <div class="country-badge" style="background: linear-gradient(135deg, #e53e3e, #dd6b20)">
+                <i class="fas fa-robot"></i> Tech Hub
+              </div>
+            </div>
+            <div class="country-info">
+              <div class="country-header">
+                <h3 class="country-name">Japan</h3>
+                <div class="country-icon">🇯🇵</div>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span style="
+                      margin-left: 8px;
+                      color: var(--text-secondary);
+                      font-size: 0.9rem;
+                    ">4/5</span>
+              </div>
+              <p class="country-description">
+                Cutting-edge technology and research with unique cultural
+                experience and strong job market.
+              </p>
+
+              <div class="country-stats">
+                <div class="stat">
+                  <span class="stat-value">¥500-800K</span>
+                  <span class="stat-label">Annual Tuition</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">Many</span>
+                  <span class="stat-label">Scholarships</span>
+                </div>
+              </div>
+
+              <ul class="country-highlights">
+                <li>
+                  <i class="fas fa-check-circle"></i> MEXT scholarships
+                  available
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Advanced technology
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Unique cultural
+                  experience
+                </li>
+                <li><i class="fas fa-check-circle"></i> Safe environment</li>
+              </ul>
+
+              <button class="view-guide-btn" onclick="viewCountryGuide('Japan')">
+                <span>View Complete Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="heading">Country Comparison</h2>
+          <p>Quick comparison of key factors to help you decide</p>
+        </div>
+
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Tuition Fees</th>
+                <th>Living Costs</th>
+                <th>Work Hours/Week</th>
+                <th>PSW Duration</th>
+                <th>Language</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>USA</strong></td>
+                <td>$30,000 - $60,000</td>
+                <td>$12,000 - $18,000</td>
+                <td>20 hours</td>
+                <td>1-3 years (OPT)</td>
+                <td>English</td>
+              </tr>
+              <tr>
+                <td><strong>Canada</strong></td>
+                <td>$15,000 - $35,000</td>
+                <td>$10,000 - $15,000</td>
+                <td>20 hours</td>
+                <td>Up to 3 years</td>
+                <td>English/French</td>
+              </tr>
+              <tr>
+                <td><strong>UK</strong></td>
+                <td>$20,000 - $45,000</td>
+                <td>$12,000 - $15,000</td>
+                <td>20 hours</td>
+                <td>2 years</td>
+                <td>English</td>
+              </tr>
+              <tr>
+                <td><strong>Australia</strong></td>
+                <td>$20,000 - $45,000</td>
+                <td>$15,000 - $21,000</td>
+                <td>40 hours fortnight</td>
+                <td>2-4 years</td>
+                <td>English</td>
+              </tr>
+              <tr>
+                <td><strong>Germany</strong></td>
+                <td>$0 - $5,000</td>
+                <td>$10,000 - $12,000</td>
+                <td>20 hours</td>
+                <td>18 months</td>
+                <td>German/English</td>
+              </tr>
+              <tr>
+                <td><strong>Japan</strong></td>
+                <td>$5,000 - $10,000</td>
+                <td>$9,000 - $12,000</td>
+                <td>28 hours</td>
+                <td>Unlimited</td>
+                <td>Japanese/English</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="heading">Essential Resources</h2>
+          <p>
+            Tools and guides to support you at every stage of your journey
+          </p>
+        </div>
+
+        <div class="resources-grid">
+          <div class="resource-card">
+            <h3><i class="fas fa-calculator"></i> Financial Planning</h3>
+            <ul class="resource-links">
+    <li>
+        <a href="#" class="resource-link" data-tool="Scholarship Finder">
+            <i class="fas fa-external-link-alt"></i> Scholarship Finder Tool
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Scholarship Finder Tool">
+            <input type="hidden" name="url" value="https://www.scholars4dev.com">
+            <input type="hidden" name="icon" value="fas fa-search">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Cost Calculator">
+            <i class="fas fa-external-link-alt"></i> Cost of Living Calculator
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Cost of Living Calculator">
+            <input type="hidden" name="url" value="https://www.numbeo.com/cost-of-living/">
+            <input type="hidden" name="icon" value="fas fa-calculator">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Student Loan">
+            <i class="fas fa-external-link-alt"></i> Student Loan Guide
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Student Loan Guide">
+            <input type="hidden" name="url" value="https://www.internationalstudentloan.com/">
+            <input type="hidden" name="icon" value="fas fa-money-bill">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Work Regulations">
+            <i class="fas fa-external-link-alt"></i> Part-time Work Regulations
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Part-time Work Regulations">
+            <input type="hidden" name="url" value="https://www.internationalstudents.org/work-regulations">
+            <input type="hidden" name="icon" value="fas fa-briefcase">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+</ul>
+          </div>
+
+          <div class="resource-card">
+            <h3><i class="fas fa-file-signature"></i> Application Tools</h3>
+           <ul class="resource-links">
+    <li>
+        <a href="#" class="resource-link" data-tool="Statement Builder">
+            <i class="fas fa-external-link-alt"></i> Personal Statement Builder
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Personal Statement Builder">
+            <input type="hidden" name="url" value="https://www.studyingabroad.com/ps-builder">
+            <input type="hidden" name="icon" value="fas fa-pen-fancy">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Document Checklist">
+            <i class="fas fa-external-link-alt"></i> Document Checklist
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Document Checklist">
+            <input type="hidden" name="url" value="https://www.documentchecklist.com/studyabroad">
+            <input type="hidden" name="icon" value="fas fa-check-square">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="University Comparison">
+            <i class="fas fa-external-link-alt"></i> University Comparison Tool
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="University Comparison Tool">
+            <input type="hidden" name="url" value="https://www.topuniversities.com/university-rankings">
+            <input type="hidden" name="icon" value="fas fa-chart-line">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Deadline Tracker">
+            <i class="fas fa-external-link-alt"></i> Deadline Tracker
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Deadline Tracker">
+            <input type="hidden" name="url" value="https://www.deadlinetracker.com/student">
+            <input type="hidden" name="icon" value="fas fa-clock">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+</ul>
+          </div>
+
+          <div class="resource-card">
+            <h3><i class="fas fa-users"></i> Community Support</h3>
+            <ul class="resource-links">
+    <li>
+        <a href="#" class="resource-link" data-tool="Student Forums">
+            <i class="fas fa-external-link-alt"></i> Country-Specific Student Forums
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Country-Specific Student Forums">
+            <input type="hidden" name="url" value="https://www.studentforums.net">
+            <input type="hidden" name="icon" value="fas fa-comments">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Connect Students">
+            <i class="fas fa-external-link-alt"></i> Connect with Current Students
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Connect with Current Students">
+            <input type="hidden" name="url" value="https://www.connectwithstudents.com">
+            <input type="hidden" name="icon" value="fas fa-user-friends">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Alumni Program">
+            <i class="fas fa-external-link-alt"></i> Alumni Mentorship Program
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Alumni Mentorship Program">
+            <input type="hidden" name="url" value="https://www.alumnimentorship.org">
+            <input type="hidden" name="icon" value="fas fa-user-graduate">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+    <li>
+        <a href="#" class="resource-link" data-tool="Workshops">
+            <i class="fas fa-external-link-alt"></i> Cultural Adaptation Workshops
+        </a>
+        <form action="save-bookmark.php" method="POST" style="display: inline;">
+            <input type="hidden" name="title" value="Cultural Adaptation Workshops">
+            <input type="hidden" name="url" value="https://www.culturaladaptation.com/students">
+            <input type="hidden" name="icon" value="fas fa-globe">
+            <button type="submit" class="bookmark-form-btn"><i class="far fa-bookmark"></i> Save</button>
+        </form>
+    </li>
+</ul>
+          </div>
+        </div>
+      </div>
+      <div id="resource_content_modal" class="resource_modal_container">
+        <div class="resource_modal_wrapper">
+          <div class="resource_modal_header">
+            <h3 id="resource_modal_title" class="resource_modal_title">
+              Resource Details
+            </h3>
+            <span class="resource_modal_close">&times;</span>
+          </div>
+          <div class="resource_modal_body">
+            <div id="resource_modal_content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container">
+      <div class="cta-section">
+        <h2>Start Your Journey Today</h2>
+        <p>
+          Join thousands of successful international students who have
+          navigated their study abroad journey with our guidance and
+          resources.
+        </p>
+        <div class="cta-buttons">
+          
+
+          <?php if (isset($_SESSION['user_id'])): ?>
+          <a href="#" class="btn btn-secondary"><i class="fas fa-calendar-alt"></i> Book a Consultation</a>
+          <?php else: ?>
+          <a href="login.php" class="btn-1 btn-secondary-1"><i class="fas fa-user"></i> Login</a>
+          <a href="register.php" class="btn-1 btn-secondary-1"><i class="fas fa-add"></i> Registration</a>
+          <?php endif; ?>
+
+        </div>
+      </div>
+      <div id="consultModal" class="consult_modal_container">
+        <div class="consult_modal_wrapper">
+          <div class="consult_modal_header">
+            <h3 class="consult_modal_title">📅 Book a Free Consultation</h3>
+            <span class="consult_modal_close">&times;</span>
+          </div>
+          <div class="consult_modal_body">
+            <form id="consultForm">
+              <div class="consult_form_group">
+                <label class="consult_label">Your Full Name *</label>
+                <input type="text" name="name" id="consult_name" class="consult_input" placeholder="e.g., Rahim Uddin"
+                  required />
+              </div>
+              <div class="consult_form_group">
+                <label class="consult_label">Email Address *</label>
+                <input type="email" name="email" id="consult_email" class="consult_input"
+                  placeholder="rahim@example.com" required />
+              </div>
+              <div class="consult_form_group">
+                <label class="consult_label">Phone Number *</label>
+                <input type="tel" name="phone" id="consult_phone" class="consult_input" placeholder="+880 1XXX XXXXXX"
+                  required />
+              </div>
+              <div class="consult_form_group">
+                <label class="consult_label">Preferred Country *</label>
+                <select name="country" id="consult_country" class="consult_input" required>
+                  <option value="">Select Country</option>
+                  <option value="USA">USA</option>
+                  <option value="UK">UK</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                </select>
+              </div>
+              <div class="consult_form_group">
+                <label class="consult_label">Preferred Date *</label>
+                <input type="date" name="date" id="consult_date" class="consult_input" required />
+              </div>
+              <div class="consult_form_group">
+                <label class="consult_label">Preferred Time *</label>
+                <select name="time" id="consult_time" class="consult_input" required>
+                  <option value="">Select Time</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="02:00 PM">02:00 PM</option>
+                  <option value="03:00 PM">03:00 PM</option>
+                  <option value="04:00 PM">04:00 PM</option>
+                  <option value="05:00 PM">05:00 PM</option>
+                </select>
+              </div>
+              <div class="consult_form_group">
+                <label class="consult_label">Your Message (Optional)</label>
+                <textarea name="message" id="consult_message" class="consult_textarea" rows="3"
+                  placeholder="Any specific questions or requirements..."></textarea>
+              </div>
+              <div class="consult_form_group">
+                <button type="submit" class="consult_submit_btn">
+                  📅 Request Consultation
+                </button>
+              </div>
+              <div id="consult_status" class="consult_status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php
+      include 'include/footer.php';
+    ?>
